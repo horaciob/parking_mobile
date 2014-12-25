@@ -1,0 +1,10 @@
+high:
+  Define api
+
+mid:
+  add test with rspec
+
+low:
+  fix migrations
+  add config.yml
+  add rvm project file
