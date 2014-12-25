@@ -6,4 +6,6 @@ gem "sinatra"
 gem "mysql2"
 gem "rspec"
 gem "oj"
+gem "sequel"
 gem 'rack-parser', :require => 'rack/parser'
+gem "mysql2"

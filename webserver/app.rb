@@ -1,12 +1,31 @@
-post '/' do
+#get '/' do
+#  {"respuesta" => "ok"}.to_json
+#end
+#
+#get '/agent' do
+#  "you're using #{request.user_agent}"
+#end
 
-  puts params.class
-  puts params.keys.to_s
-  puts params.to_s
+class TrafficApi < Sinatra::Application
+  #enable :sessions
 
-  params.to_s
+  configure :production do
+    set :clean_trace, true
+  end
+
+  configure :development do
+    # ...
+  end
+
+  helpers do
+    include Rack::Utils
+  end
 end
 
-get '/agent' do
-  "you're using #{request.user_agent}"
-end
+puts "Loading configurations"
+Dir["#{$root}/config/*.rb"].each {|file| require  file }
+puts "Loading Models"
+Dir["#{$root}/app/models/*.rb"].each {|file| require  file }
+puts "Loading controllers"
+Dir["#{$root}/app/controllers/*.rb"].each {|file| require  file }
+
