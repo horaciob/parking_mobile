@@ -1,5 +1,5 @@
 require "sequel"
-require "./config/init_db.rb"
+require "./conf/init_db.rb"
 
 Sequel.extension :migration
 

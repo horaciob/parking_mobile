@@ -5,6 +5,8 @@
 #get '/agent' do
 #  "you're using #{request.user_agent}"
 #end
+require "sinatra/sequel"
+
 
 class TrafficApi < Sinatra::Application
   #enable :sessions
@@ -20,12 +22,12 @@ class TrafficApi < Sinatra::Application
   helpers do
     include Rack::Utils
   end
+  puts "Loading configurations"
+  Dir["#{$root}/conf/*.rb"].each {|file| require  file }
+  puts "Loading Models"
+  Dir["#{$root}/app/models/*.rb"].each {|file| require  file }
+  puts "Loading controllers"
+  Dir["#{$root}/app/controllers/*.rb"].each {|file| require  file }
 end
 
-puts "Loading configurations"
-Dir["#{$root}/config/*.rb"].each {|file| require  file }
-puts "Loading Models"
-Dir["#{$root}/app/models/*.rb"].each {|file| require  file }
-puts "Loading controllers"
-Dir["#{$root}/app/controllers/*.rb"].each {|file| require  file }
 

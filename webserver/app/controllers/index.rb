@@ -1,5 +1,4 @@
 class TrafficApi < Sinatra::Application
-  get "/pepe" do
-    "this is the home"
+  get "/" do
   end
 end

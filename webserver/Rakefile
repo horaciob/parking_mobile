@@ -23,7 +23,7 @@ namespace :db do
 
     require 'sequel/extensions/migration'
     Sequel.extension :migration
-    Sequel::Migrator.apply(Foo::Database, "db/migrate")
+    Sequel::Migrator.apply(DB, "db/migrate")
   end
 
   desc "Rollback the database"
