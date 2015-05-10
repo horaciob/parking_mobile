@@ -1,9 +1,0 @@
-database:
-  :adapter
-  :database
-  :host
-  :loggers
-  :user
-  :password
-  :servers
-

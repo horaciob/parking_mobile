@@ -1,15 +1,4 @@
-require 'rubygems'
-require 'bundler'
-require "json"
-Bundler.require
+# This file is used by Rack-based servers to start the application.
 
-$root = ::File.dirname(__FILE__)
-require ::File.join( $root, 'app' )
-
-
-use Rack::Parser, :content_types => {
-    'application/json' => proc { |body| OJ.load body }
-}
-
-#run Sinatra::Application
-run TrafficApi.new
+require ::File.expand_path('../config/environment', __FILE__)
+run Rails.application
