@@ -45,3 +45,12 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development, :test do
+    gem 'rspec-rails', '~> 3.0'
+    gem "guard"
+    gem 'guard-rspec', require: false
+    gem 'spork', '~> 1.0rc'
+end
+
+
+

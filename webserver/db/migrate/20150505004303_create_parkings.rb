@@ -1,10 +1,9 @@
 class CreateParkings < ActiveRecord::Migration
   def change
     create_table :parkings do |t|
-      t.string :licence_plate
-      t.integer :zone_id
-      t.datetime :finish_at
+      t.datetime :expires_at
       t.string :status
+      t.integer :car_id
 
       t.timestamps null: false
     end

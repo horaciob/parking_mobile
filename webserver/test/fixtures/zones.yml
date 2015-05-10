@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  zone: MyText
+  zone_number: 1
+  price: 1.5
+  payment_id: 1
+
+two:
+  zone: MyText
+  zone_number: 1
+  price: 1.5
+  payment_id: 1
