@@ -1,0 +1,14 @@
+Metrics/LineLength:
+  Max: 99
+
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'test/**/*'
+    - 'bin/*'
+    - 'Guardfile'
+    - 'spec/spec_helper.rb'
+    - !ruby/regexp /old_and_unused\.rb$/
