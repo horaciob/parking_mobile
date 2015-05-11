@@ -16,6 +16,8 @@ class Zone < ActiveRecord::Base
   has_many :parkings
   before_save :check_price
 
+  validates :zone, presence: true
+  validates :zone_number, presence: true
   def check_price
     self.price = 10.0 if price.nil?
   end

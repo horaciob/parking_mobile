@@ -14,4 +14,6 @@
 ## Payments methods
 class Payment < ActiveRecord::Base
   belongs_to :parking
+
+  validates :type, presence: { message: 'Debe especificarse un metodo de pago' }
 end

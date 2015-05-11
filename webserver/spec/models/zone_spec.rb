@@ -15,7 +15,7 @@ require 'rails_helper'
 RSpec.describe Zone, type: :model do
   context '#Default' do
     it 'Default price should be set' do
-      zone = Zone.create
+      zone = Zone.create(zone: 'test_zone', zone_number: 100)
       zone.reload
       expect(zone.price).to eq(10.0)
     end
