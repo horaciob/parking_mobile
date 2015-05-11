@@ -14,4 +14,9 @@
 ## Una zona es una calle o una agrupacion de estacionamientos
 class Zone < ActiveRecord::Base
   has_many :parkings
+  before_save :check_price
+
+  def check_price
+    self.price = 10.0 if price.nil?
+  end
 end
