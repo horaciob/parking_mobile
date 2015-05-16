@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20150510163912) do
     t.string   "data",       limit: 255
     t.integer  "parking_id", limit: 4
     t.string   "status",     limit: 255
+    t.float    "price",      limit: 24
+    t.integer  "units",      limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -39,7 +41,8 @@ ActiveRecord::Schema.define(version: 20150510163912) do
   create_table "zones", force: :cascade do |t|
     t.text     "zone",        limit: 65535
     t.integer  "zone_number", limit: 4
-    t.float    "price",       limit: 24
+    t.float    "unit_price",  limit: 24
+    t.integer  "unit_time",   limit: 4
     t.integer  "payment_id",  limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false

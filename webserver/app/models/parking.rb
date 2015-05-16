@@ -15,4 +15,18 @@ class Parking < ActiveRecord::Base
   has_many :payment
   belongs_to :zone
   belongs_to :car
+
+  def expiration_check
+    update_atrribute(:status, 'expired') if need_to_be_expired?
+  end
+
+  def expired?
+    status == 'expired'
+  end
+
+  private
+
+  def need_to_be_expired?
+    !expired? && Time.zone.now > expires_at
+  end
 end
