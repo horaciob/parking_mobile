@@ -25,7 +25,6 @@ class Parking < ActiveRecord::Base
   end
 
   private
-
   def need_to_be_expired?
     !expired? && Time.zone.now > expires_at
   end

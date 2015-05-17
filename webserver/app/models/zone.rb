@@ -14,12 +14,12 @@
 
 
 ## Una zona es una calle o una agrupacion de estacionamientos
+
 class Zone < ActiveRecord::Base
   has_many :parkings
   has_many :payments
   before_validation :set_defaults
-
-  validates :zone, presence: true
+  t validates :zone, presence: true
   validates :zone_number, presence: true
 
   def set_defaults
