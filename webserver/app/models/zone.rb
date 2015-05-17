@@ -18,7 +18,7 @@ class Zone < ActiveRecord::Base
   has_many :parkings
   has_many :payments
   before_validation :set_defaults
-  validates :zone, presence: true
+  validates :name, presence: true
   validates :zone_number, presence: true
 
   def set_defaults
