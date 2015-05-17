@@ -1,7 +1,7 @@
 class CreateZones < ActiveRecord::Migration
   def change
     create_table :zones do |t|
-      t.text :zone
+      t.string :zone
       t.integer :zone_number
       t.float :unit_price
       t.integer :unit_time

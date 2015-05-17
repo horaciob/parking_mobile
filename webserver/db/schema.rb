@@ -39,13 +39,13 @@ ActiveRecord::Schema.define(version: 20150510163912) do
   end
 
   create_table "zones", force: :cascade do |t|
-    t.text     "zone",        limit: 65535
+    t.string   "zone",        limit: 255
     t.integer  "zone_number", limit: 4
     t.float    "unit_price",  limit: 24
     t.integer  "unit_time",   limit: 4
     t.integer  "payment_id",  limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
 end

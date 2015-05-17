@@ -3,7 +3,7 @@
 # Table name: zones
 #
 #  id          :integer          not null, primary key
-#  zone        :text(65535)
+#  zone        :string(255)
 #  zone_number :integer
 #  unit_price  :float(24)
 #  unit_time   :integer
@@ -11,7 +11,6 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-
 
 ## Una zona es una calle o una agrupacion de estacionamientos
 
