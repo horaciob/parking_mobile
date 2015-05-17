@@ -7,7 +7,7 @@ class ZonesController < ApplicationController
   def create
     @zone = Zone.new(zone_params)
     if @zone.save
-      render json: @zone
+      render json: @zone, status: :created
     else
       render json: { errors: @zone.errors.full_messages }
     end
@@ -22,13 +22,12 @@ class ZonesController < ApplicationController
         render json: { errors: @zone.errors.full_messages }
       end
     else
-      render json: {errors: "Could not found #{params[:id]} zone"}
+      render json: { errors: "Could not found #{params[:id]} zone" }
     end
   end
 
-
-
   private
+
   def zone_params
     params.permit(:zone, :zone_number, :unit_price, :unit_time)
   end

@@ -19,7 +19,7 @@ class Zone < ActiveRecord::Base
   has_many :payments
   before_validation :set_defaults
   validates :name, presence: true
-  validates :zone_number, presence: true
+  validates :number, presence: true
 
   def set_defaults
 #    self.price = 10.0 if price.nil?

@@ -15,17 +15,19 @@
 require 'rails_helper'
 
 RSpec.describe Zone, type: :model do
-  context '#Default' do
-    it 'Default price should be set' do
-      zone = Zone.create(zone: 'test_zone', zone_number: 100)
-      zone.reload
-      expect(zone.unit_price).to eq(5.0)
-    end
+  describe '#Default' do
+    context 'valid' do
+      it 'Default price should be set' do
+        zone = Zone.create(name: 'test_zone', number: 100)
+        zone.reload
+        expect(zone.unit_price).to eq(5.0)
+      end
 
-    it 'Default time  should be set' do
-      zone = Zone.create(zone: 'test_zone', zone_number: 100)
-      zone.reload
-      expect(zone.unit_time).to eq(30)
+      it 'Default time  should be set' do
+        zone = Zone.create(name: 'test_zone', number: 100)
+        zone.reload
+        expect(zone.unit_time).to eq(30)
+      end
     end
   end
 end
