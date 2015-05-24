@@ -1,11 +1,11 @@
 == README
 tested on ruby 2.2.1p85
 
-## Dependencies:
+= Dependencies:
 
 Mysql
 
-## To install
+= To install
 
 gem install bundler
 
@@ -14,9 +14,9 @@ bundle install
 rake db:create:all
 rake db:migrate
 
-if all is ok 
+if all is ok
 
-rspec 
+rspec
 
 should run test and if all pass.
 
