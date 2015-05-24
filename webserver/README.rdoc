@@ -1,7 +1,7 @@
 === README
 tested on ruby 2.2.1p85
 
-=== Dependencies:
+=== Dependencies
 
 Mysql
 
