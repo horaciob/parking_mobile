@@ -2,14 +2,13 @@
 #
 # Table name: zones
 #
-#  id          :integer          not null, primary key
-#  zone        :string(255)
-#  zone_number :integer
-#  unit_price  :float(24)
-#  unit_time   :integer
-#  payment_id  :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  number     :integer
+#  unit_price :float(24)
+#  unit_time  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: zones
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  number     :integer
+#  unit_price :float(24)
+#  unit_time  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 FactoryGirl.define do
   factory :zone, class: Zone  do
     name "test"

@@ -5,6 +5,7 @@
 #  id         :integer          not null, primary key
 #  expires_at :datetime
 #  status     :string(255)
+#  zone_id    :integer
 #  car_id     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -15,6 +16,7 @@ class Parking < ActiveRecord::Base
   has_many :payment
   belongs_to :zone
   belongs_to :car
+  has_many :devices
 
   def expiration_check
     update_atrribute(:status, 'expired') if need_to_be_expired?

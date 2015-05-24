@@ -5,6 +5,7 @@
 #  id         :integer          not null, primary key
 #  expires_at :datetime
 #  status     :string(255)
+#  zone_id    :integer
 #  car_id     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
