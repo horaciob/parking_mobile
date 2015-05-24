@@ -1,28 +1,24 @@
 == README
+tested on ruby 2.2.1p85
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dependencies:
 
-Things you may want to cover:
+Mysql
 
-* Ruby version
+To install
 
-* System dependencies
+gem install bundler
 
-* Configuration
+bundle install
 
-* Database creation
+rake db:create:all
+rake db:migrate
 
-* Database initialization
+if all is ok 
 
-* How to run the test suite
+rspec 
 
-* Services (job queues, cache servers, search engines, etc.)
+should run test and if all pass.
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+rails s
+curl localhost:3000
