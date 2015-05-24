@@ -30,11 +30,12 @@ ActiveRecord::Schema.define(version: 20150524152839) do
 
   create_table "parkings", force: :cascade do |t|
     t.datetime "expires_at"
-    t.string   "status",     limit: 255
-    t.integer  "zone_id",    limit: 4
-    t.integer  "car_id",     limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "status",        limit: 255
+    t.integer  "parking_units", limit: 4
+    t.integer  "zone_id",       limit: 4
+    t.integer  "car_id",        limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "payments", force: :cascade do |t|

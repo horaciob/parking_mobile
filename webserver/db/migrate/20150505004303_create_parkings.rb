@@ -3,6 +3,7 @@ class CreateParkings < ActiveRecord::Migration
     create_table :parkings do |t|
       t.datetime :expires_at
       t.string :status
+      t.integer :parking_units
       t.integer :zone_id
       t.integer :car_id
 
