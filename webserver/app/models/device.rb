@@ -14,4 +14,5 @@
 class Device < ActiveRecord::Base
   belongs_to :car
   belongs_to :parking
+
 end
