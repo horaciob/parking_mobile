@@ -6,7 +6,6 @@
 #  notification_token :string(500)
 #  user_agent         :string(255)
 #  car_id             :integer
-#  parking_id         :integer
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
@@ -34,14 +33,6 @@ RSpec.describe Device, type: :model do
       device = Device.new(values)
       device.valid?
       expect(device.errors[:notification_token]).to include("can't be blank")
-    end
-
-    it 'validates presence of car' do
-      values = params
-      values.delete :car
-      device = Device.new(values)
-      device.valid?
-      expect(device.errors[:car]).to include("can't be blank")
     end
 
     it 'validates precense of user agent' do

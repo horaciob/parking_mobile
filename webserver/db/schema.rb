@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150524152839) do
     t.string   "notification_token", limit: 500
     t.string   "user_agent",         limit: 255
     t.integer  "car_id",             limit: 4
-    t.integer  "parking_id",         limit: 4
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
@@ -32,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150524152839) do
     t.datetime "expires_at"
     t.string   "status",        limit: 255
     t.integer  "parking_units", limit: 4
+    t.integer  "device_id",     limit: 4
     t.integer  "zone_id",       limit: 4
     t.integer  "car_id",        limit: 4
     t.datetime "created_at",                null: false
@@ -39,14 +39,15 @@ ActiveRecord::Schema.define(version: 20150524152839) do
   end
 
   create_table "payments", force: :cascade do |t|
-    t.string   "type",       limit: 255
-    t.string   "data",       limit: 255
-    t.integer  "parking_id", limit: 4
-    t.string   "status",     limit: 255
-    t.float    "price",      limit: 24
-    t.integer  "units",      limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "payment_method", limit: 255
+    t.string   "data",           limit: 255
+    t.integer  "parking_id",     limit: 4
+    t.integer  "device_id",      limit: 4
+    t.string   "status",         limit: 255
+    t.float    "price",          limit: 24
+    t.integer  "units",          limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "zones", force: :cascade do |t|

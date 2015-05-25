@@ -4,7 +4,6 @@ class CreateDevices < ActiveRecord::Migration
       t.string :notification_token, :limit => 500
       t.string :user_agent
       t.integer :car_id
-      t.integer :parking_id
 
       t.timestamps null: false
     end

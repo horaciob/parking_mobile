@@ -15,7 +15,7 @@ require 'rails_helper'
 
 RSpec.describe Zone, type: :model do
   describe '#Default' do
-    context 'valid' do
+    context 'validation' do
       it 'Default price should be set' do
         zone = Zone.create(name: 'test_zone', number: 100)
         zone.reload
@@ -26,6 +26,13 @@ RSpec.describe Zone, type: :model do
         zone = Zone.create(name: 'test_zone', number: 100)
         zone.reload
         expect(zone.unit_time).to eq(30)
+      end
+    end
+
+    context '#custom_find' do
+      it 'finds by name and number' do
+        FactoryGirl.create(:zone_catamarca)
+        expect(Zone.custom_find('catamarca', 100)).to eq(Zone.first)
       end
     end
   end

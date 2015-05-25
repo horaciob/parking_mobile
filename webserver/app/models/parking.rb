@@ -6,6 +6,7 @@
 #  expires_at    :datetime
 #  status        :string(255)
 #  parking_units :integer
+#  device_id     :integer
 #  zone_id       :integer
 #  car_id        :integer
 #  created_at    :datetime         not null
@@ -14,12 +15,23 @@
 
 ## Estacionamiento medido
 class Parking < ActiveRecord::Base
-  has_many :payment
+  has_many :payments
+  belongs_to :device
   belongs_to :zone
   belongs_to :car
-  has_many :devices
+  accepts_nested_attributes_for :payments, :car, :device
 
-  accepts_nested_attributes_for :payment, :car, :devices
+  validates :parking_units, presence: true
+  validates :device, presence: true
+  validates :car, presence: true
+  validates :zone, presence: true
+
+  after_create :calulate_expiration
+
+  def calulate_expiration
+    finish = created_at + (zone.unit_time * 60 * parking_units)
+    update_attributes(expires_at: finish)
+  end
 
   def expiration_check
     update_atrribute(:status, 'expired') if need_to_be_expired?

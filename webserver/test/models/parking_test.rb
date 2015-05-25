@@ -6,6 +6,7 @@
 #  expires_at    :datetime
 #  status        :string(255)
 #  parking_units :integer
+#  device_id     :integer
 #  zone_id       :integer
 #  car_id        :integer
 #  created_at    :datetime         not null

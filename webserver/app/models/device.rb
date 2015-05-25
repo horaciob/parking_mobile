@@ -6,14 +6,11 @@
 #  notification_token :string(500)
 #  user_agent         :string(255)
 #  car_id             :integer
-#  parking_id         :integer
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
 class Device < ActiveRecord::Base
   belongs_to :car
-  belongs_to :parking
-  validates :car, presence: true
   validates :user_agent, presence: true
   validates :notification_token, presence: true
 end

@@ -1,6 +1,9 @@
 Metrics/LineLength:
   Max: 120
 
+MethodLength:
+  Max: 20
+
 AllCops:
   RunRailsCops: true
   Exclude:

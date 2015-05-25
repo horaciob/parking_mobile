@@ -13,9 +13,16 @@
 
 FactoryGirl.define do
   factory :zone, class: Zone  do
-    name "test"
+    name 'test'
     number  300
     unit_price 5
     unit_time  30
+  end
+
+  factory :zone_catamarca, class: Zone do
+    name 'catamarca'
+    number 100
+    unit_price 5
+    unit_time 30
   end
 end
