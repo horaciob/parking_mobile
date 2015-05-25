@@ -15,16 +15,14 @@
 require 'rails_helper'
 
 RSpec.describe Parking, type: :model do
-  #let(parking){Parking.new}
   context '#validation' do
   end
   context '#status' do
     describe 'expired?' do
-
     end
+
     describe 'need_to_be_expired?' do
       it 'true if expired' do
-        #user = FactoryGirl.create :parking
       end
     end
   end

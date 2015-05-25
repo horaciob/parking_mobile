@@ -1,3 +1,4 @@
+# Zone handler
 class ZonesController < ApplicationController
   skip_before_filter :verify_authenticity_token
   def index
@@ -22,8 +23,7 @@ class ZonesController < ApplicationController
         render json: { errors: @zone.errors.full_messages }
       end
     rescue ActiveRecord::RecordNotFound
-      render json: { errors: "Could not found #{params[:id]} zone" },
-        status: 404
+      render json: { errors: "Could not found #{params[:id]} zone" }, status: 404
     end
   end
 
@@ -32,6 +32,4 @@ class ZonesController < ApplicationController
   def zone_params
     params.permit(:zone, :zone_number, :unit_price, :unit_time)
   end
-
-
 end

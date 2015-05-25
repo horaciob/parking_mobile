@@ -1,5 +1,5 @@
 Metrics/LineLength:
-  Max: 99
+  Max: 120
 
 AllCops:
   RunRailsCops: true
@@ -12,4 +12,5 @@ AllCops:
     - 'Guardfile'
     - 'spec/spec_helper.rb'
     - 'lib/tasks/**/*'
+    - 'spec/factories/*'
     - !ruby/regexp /old_and_unused\.rb$/

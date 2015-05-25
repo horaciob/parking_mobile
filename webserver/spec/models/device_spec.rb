@@ -14,9 +14,11 @@
 require 'rails_helper'
 
 RSpec.describe Device, type: :model do
-  let(:params){ { notification_token: 'abcdefg12345678',
-                  user_agent: 'test_user_agent',
-                  car: FactoryGirl.build(:car) } }
+  let(:params) do
+    { notification_token: 'abcdefg12345678',
+      user_agent: 'test_user_agent',
+      car: FactoryGirl.build(:car) }
+  end
 
   describe '#create' do
     it 'allows to create new device' do
@@ -49,6 +51,5 @@ RSpec.describe Device, type: :model do
       device.valid?
       expect(device.errors[:user_agent]).to include("can't be blank")
     end
-
   end
 end

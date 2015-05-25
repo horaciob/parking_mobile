@@ -10,7 +10,6 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
-
 class Device < ActiveRecord::Base
   belongs_to :car
   belongs_to :parking
