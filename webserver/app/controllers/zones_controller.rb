@@ -14,15 +14,16 @@ class ZonesController < ApplicationController
   end
 
   def update
-    @zone = Zone.find(params[:id])
-    if @zone
+    begin
+      @zone = Zone.find(params[:id])
       if @zone.update_attributes(zone_params)
-        render json: @zone
+        render json: @zone.to_json, status: 200
       else
         render json: { errors: @zone.errors.full_messages }
       end
-    else
-      render json: { errors: "Could not found #{params[:id]} zone" }
+    rescue ActiveRecord::RecordNotFound
+      render json: { errors: "Could not found #{params[:id]} zone" },
+        status: 404
     end
   end
 

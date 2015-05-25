@@ -13,10 +13,9 @@
 
 FactoryGirl.define do
   factory :device do
-    notification_token ""
-user_agent ""
-car_id ""
-parking_id 1
+    notification_token 'fasdfadsfdas312312'
+    user_agent 'agent/test 5.0'
+    car_id 1
+    parking_id 1
   end
-
 end

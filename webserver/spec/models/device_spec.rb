@@ -14,5 +14,41 @@
 require 'rails_helper'
 
 RSpec.describe Device, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:params){ { notification_token: 'abcdefg12345678',
+                  user_agent: 'test_user_agent',
+                  car: FactoryGirl.build(:car) } }
+
+  describe '#create' do
+    it 'allows to create new device' do
+      device = Device.new(params)
+      expect(device.save).to eq(true)
+    end
+  end
+
+  describe '#validations' do
+    it 'validates presence of notification token' do
+      values = params
+      values.delete :notification_token
+      device = Device.new(values)
+      device.valid?
+      expect(device.errors[:notification_token]).to include("can't be blank")
+    end
+
+    it 'validates presence of car' do
+      values = params
+      values.delete :car
+      device = Device.new(values)
+      device.valid?
+      expect(device.errors[:car]).to include("can't be blank")
+    end
+
+    it 'validates precense of user agent' do
+      values = params
+      values.delete :user_agent
+      device = Device.new(values)
+      device.valid?
+      expect(device.errors[:user_agent]).to include("can't be blank")
+    end
+
+  end
 end

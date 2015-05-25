@@ -14,5 +14,7 @@
 class Device < ActiveRecord::Base
   belongs_to :car
   belongs_to :parking
-
+  validates :car, presence: true
+  validates :user_agent, presence: true
+  validates :notification_token, presence: true
 end

@@ -11,4 +11,5 @@ AllCops:
     - 'bin/*'
     - 'Guardfile'
     - 'spec/spec_helper.rb'
+    - 'lib/tasks/**/*'
     - !ruby/regexp /old_and_unused\.rb$/

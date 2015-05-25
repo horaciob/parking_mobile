@@ -19,6 +19,8 @@ class Parking < ActiveRecord::Base
   belongs_to :car
   has_many :devices
 
+  accepts_nested_attributes_for :payment, :car, :devices
+
   def expiration_check
     update_atrribute(:status, 'expired') if need_to_be_expired?
   end
