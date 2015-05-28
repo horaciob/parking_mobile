@@ -14,5 +14,7 @@ class Car < ActiveRecord::Base
   has_many :devices
   validates :license_plate, format: { with: /\A[A-ZÑ]{3}\d{3}\z/,
                                       message: 'Patente no valida en la Argentina' },
-                                      presence: { message: 'Debe incluir la patente del vehiculo' }
+                            presence: {
+                              message: 'Debe incluir la patente del vehiculo'
+                            }
 end

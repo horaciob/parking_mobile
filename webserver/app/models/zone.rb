@@ -22,7 +22,7 @@ class Zone < ActiveRecord::Base
     self.unit_price = DEFAULT_UNIT_PRICE.to_f if unit_price.blank?
   end
 
-  def self.custom_find(name, zone)
-    Zone.find_by('name = ? AND number = ?', name, zone).first
+  def self.custom_find(name, number)
+    Zone.find_by('name = ? AND number = ?', name, number)
   end
 end
