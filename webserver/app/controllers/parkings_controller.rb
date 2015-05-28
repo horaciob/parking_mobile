@@ -10,7 +10,7 @@ class ParkingsController < ApplicationController
       parking = Parking.create(parking_values)
       render json: parking.to_json
     else
-      render status: 404
+      render json: { zone: 'Zone not found' }, status: 404
     end
   end
 

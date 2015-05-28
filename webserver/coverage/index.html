@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-05-27T23:47:28-03:00">2015-05-27T23:47:28-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-05-27T23:56:51-03:00">2015-05-27T23:56:51-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.64%</span></span>
+    (<span class="covered_percent"><span class="green">97.99%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.27
+         1.29
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>39</b> files in total.
-    <b>296</b> relevant lines. 
-    <span class="green"><b>289</b> lines covered</span> and
-    <span class="red"><b>7</b> lines missed </span>
+    <b>298</b> relevant lines. 
+    <span class="green"><b>292</b> lines covered</span> and
+    <span class="red"><b>6</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#dda27a12bfe602f28f317a429dae8d5318cefa4a" class="src_link" title="app/controllers/parkings_controller.rb">app/controllers/parkings_controller.rb</a></td>
-        <td class="green strong">93.33 %</td>
+        <td class="green strong">100.0 %</td>
         <td>33</td>
         <td>15</td>
-        <td>14</td>
-        <td>1</td>
-        <td>0.9</td>
+        <td>15</td>
+        <td>0</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
@@ -157,7 +157,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>4.9</td>
+        <td>5.0</td>
       </tr>
       
       <tr>
@@ -303,11 +303,11 @@
       <tr>
         <td class="strong"><a href="#930d0470e97a1f037c57740b0a0fc3b54b75bd50" class="src_link" title="spec/controllers/parkings_controller_spec.rb">spec/controllers/parkings_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>37</td>
-        <td>13</td>
-        <td>13</td>
+        <td>40</td>
+        <td>15</td>
+        <td>15</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -513,11 +513,11 @@
         <div class="source_table" id="dda27a12bfe602f28f317a429dae8d5318cefa4a">
   <div class="header">
     <h3>app/controllers/parkings_controller.rb</h3>
-    <h4><span class="green">93.33 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>15</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -542,14 +542,14 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
           
           <code class="ruby">    zone_param = zone_find_params</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
           
           <code class="ruby">    zone = Zone.custom_find(zone_param[:zone][&#39;name&#39;], zone_param[:zone][&#39;number&#39;])</code>
         </li>
@@ -560,8 +560,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
           
           <code class="ruby">    if zone</code>
         </li>
@@ -596,10 +596,10 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      render status: 404</code>
+          <code class="ruby">      render json: { zone: &#39;Zone not found&#39; }, status: 404</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
@@ -650,8 +650,8 @@
           <code class="ruby">      zone: params[:parking].require(:zone).permit(:name, :number)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
           <code class="ruby">    }</code>
         </li>
@@ -1934,8 +1934,8 @@
           <code class="ruby">  def self.custom_find(name, number)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="26">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="26">
+          <span class="hits">3</span>
           
           <code class="ruby">    Zone.find_by(&#39;name = ? AND number = ?&#39;, name, number)</code>
         </li>
@@ -3089,8 +3089,8 @@
     <h3>spec/controllers/parkings_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>13</b> relevant lines. 
-      <span class="green"><b>13</b> lines covered</span> and
+      <b>15</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3224,8 +3224,8 @@
           <code class="ruby">      }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
           <code class="ruby">    }</code>
         </li>
@@ -3305,16 +3305,34 @@
         <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;&#39;</code>
+          <code class="ruby">    it &#39;Cannot create a parking if zone doesn\&#39;t exist&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      post :create, parking: complete_params</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to have_http_status(404)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">end</code>

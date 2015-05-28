@@ -32,6 +32,9 @@ RSpec.describe ParkingsController, type: :controller do
       expect(Payment.count).to eq(1)
     end
 
-    it ''
+    it 'Cannot create a parking if zone doesn\'t exist' do
+      post :create, parking: complete_params
+      expect(response).to have_http_status(404)
+    end
   end
 end
