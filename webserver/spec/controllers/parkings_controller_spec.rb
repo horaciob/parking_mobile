@@ -32,9 +32,28 @@ RSpec.describe ParkingsController, type: :controller do
       expect(Payment.count).to eq(1)
     end
 
+    #it 'validates presence of car info on request' do
+    #  FactoryGirl.create(:zone_catamarca)
+    #  parameters = complete_params
+    #  parameters.delete(:car)
+    #  post :create, parking: parameters
+    #  expect(response).to have_http_status(:unprocessable_entity)
+    #end
+
     it 'Cannot create a parking if zone doesn\'t exist' do
       post :create, parking: complete_params
       expect(response).to have_http_status(404)
     end
+  end
+
+  describe '#index' do
+    it 'list all parkings'
+    it 'list all parkings for a car'
+    it 'list filtering by expired date'
+  end
+
+  describe '#PUT' do
+    it 'extends payments'
+    it 'expires'
   end
 end

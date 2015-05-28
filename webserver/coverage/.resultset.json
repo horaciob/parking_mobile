@@ -36,10 +36,29 @@
         1,
         null,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         1,
         1,
         null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -462,7 +481,16 @@
         1,
         null,
         null,
+        null,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/controllers/zones_controller_spec.rb": [
@@ -949,6 +977,6 @@
         null
       ]
     },
-    "timestamp": 1432781811
+    "timestamp": 1432783622
   }
 }
