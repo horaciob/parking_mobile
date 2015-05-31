@@ -1,0 +1,10 @@
+
+FactoryGirl.define do
+  factory :payment do
+    type 'payment-test'
+    data '{"data1":"value1"}'
+    price 30
+    units 90
+    parking_id 1
+  end
+end

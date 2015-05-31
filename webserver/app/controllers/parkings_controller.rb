@@ -1,5 +1,14 @@
 # Parking controller
 class ParkingsController < ApplicationController
+  def index
+    response = Parking.filter(params.slice(:status, :expires, :car, :zone))
+    if response
+      render json: response.to_a, root: false
+    else
+      render json: { application: 'application not found' }, status: 404
+    end
+  end
+
   def create
     zone_param = zone_find_params
     zone = Zone.custom_find(zone_param[:zone]['name'], zone_param[:zone]['number'])

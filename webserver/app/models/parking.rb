@@ -15,11 +15,17 @@
 
 ## Estacionamiento medido
 class Parking < ActiveRecord::Base
+  include Filterable
   has_many :payments
   belongs_to :device
   belongs_to :zone
   belongs_to :car
   accepts_nested_attributes_for :payments, :car, :device
+
+  scope :status, -> (status) { where('status = ?', status) }
+  scope :expires, -> (init, finish) { where('expires_at > ? and expires_at < ?', init, finish) }
+  scope :car, -> (license_plate) { joins(:cars).where('license_plate = ?', license_plate) }
+  scope :zone, -> (zone) { joins(:zones).where('zone = ?', zone) }
 
   validates :parking_units, presence: true
   validates :device, presence: true

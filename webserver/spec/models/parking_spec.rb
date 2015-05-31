@@ -70,13 +70,30 @@ RSpec.describe Parking, type: :model do
     end
   end
 
+  context '#Scopes' do
+    it 'filters by status allowed' do
+      3.times { FactoryGirl.create(:parking, :expired) }
+      2.times { FactoryGirl.create(:parking, :allowed) }
+      expect(Parking.status('allowed').size).to eq 2
+    end
+
+    it 'filters by status expired' do
+      6.times { FactoryGirl.create(:parking, :expired) }
+      3.times { FactoryGirl.create(:parking, :allowed) }
+      expect(Parking.status('expired').size).to eq 6
+    end
+
+    it 'filter by expires_at field'
+    it 'filter by license plate'
+    it 'filter by zone'
+
+  end
   context '#status' do
     describe 'expired?' do
     end
 
     describe 'need_to_be_expired?' do
-      it 'true if expired' do
-      end
+      it 'true if expired'
     end
   end
 end

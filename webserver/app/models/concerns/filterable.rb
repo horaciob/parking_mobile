@@ -1,6 +1,9 @@
+# extract of
+# http://www.justinweiss.com/blog/2014/02/17/search-and-filter-rails-models-without-bloating-your-controller/
 module Filterable
   extend ActiveSupport::Concern
 
+  # class method
   module ClassMethods
     def filter(filtering_params)
       results = self.where(nil)
