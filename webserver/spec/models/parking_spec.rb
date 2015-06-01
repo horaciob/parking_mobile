@@ -103,18 +103,18 @@ RSpec.describe Parking, type: :model do
       expect(Parking.zone_name('catamarca').size).to eq 2
     end
 
-    it 'filter by zone name and number' do
+  end
 
+  describe 'expirations' do
+    it 'expired? respnds true if it expires' do
+      parking = FactoryGirl.create(:parking,:expired)
+      expect(parking.expired?).to eq(true)
+    end
+
+    it 'expires? respond false if not expired' do
+      parking = FactoryGirl.create(:parking)
+      expect(parking.expired?).to eq(false)
     end
   end
-
 end
 
-context '#status' do
-  describe 'expired?' do
-  end
-
-  describe 'need_to_be_expired?' do
-    it 'true if expired'
-  end
-end
