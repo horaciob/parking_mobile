@@ -47,8 +47,20 @@ RSpec.describe ParkingsController, type: :controller do
   end
 
   describe '#index' do
-    it 'list all parkings'
-    it 'list all parkings for a car'
+    it 'list all parkings' do
+      FactoryGirl.create_list(:parking, 3)
+      FactoryGirl.create(:parking, :zone_test)
+      get :index
+      expect(JSON.parse(response.body).size).to eq(4)
+    end
+
+    it 'list all parkings for a car' do
+      FactoryGirl.create_list(:parking, 3)
+      last=nil
+      3.times{ last = FactoryGirl.create(:parking, :car_test) }
+      get :index, license_plate: last.car.license_plate
+      expect(JSON.parse(response.body).size).to eq(3)
+    end
     it 'list filtering by expired date'
   end
 

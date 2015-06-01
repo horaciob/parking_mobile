@@ -1,7 +1,7 @@
 # Parking controller
 class ParkingsController < ApplicationController
   def index
-    response = Parking.filter(params.slice(:status, :expires, :car, :zone))
+    response = Parking.filter(params.slice(:status, :expires, :license_plate, :zone_number, :zone_name))
     if response
       render json: response.to_a, root: false
     else
