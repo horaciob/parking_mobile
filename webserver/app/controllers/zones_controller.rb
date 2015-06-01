@@ -3,6 +3,7 @@ class ZonesController < ApplicationController
   skip_before_filter :verify_authenticity_token
   def index
     @zone = Zone.all
+    render json: @zone.to_json
   end
 
   def create
@@ -10,7 +11,7 @@ class ZonesController < ApplicationController
     if @zone.save
       render json: @zone, status: :created
     else
-      render json: { errors: @zone.errors.full_messages }
+      render json: { errors: @zone.errors.full_messages }, status: 400
     end
   end
 
@@ -30,6 +31,6 @@ class ZonesController < ApplicationController
   private
 
   def zone_params
-    params.permit(:zone, :zone_number, :unit_price, :unit_time)
+    params.permit(:name, :number,:unit_price, :unit_time)
   end
 end
