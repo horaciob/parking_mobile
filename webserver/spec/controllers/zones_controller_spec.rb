@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ZonesController, type: :controller do
   describe '#index' do
     it 'show all zones' do
-      FactoryGirl.create_list(:zone,6)
+      FactoryGirl.create_list(:zone, 6)
       get :index
       expect(JSON.parse(response.body).size).to eq 6
     end
@@ -12,7 +12,7 @@ RSpec.describe ZonesController, type: :controller do
   describe '#create' do
     context 'creating zones' do
       it 'creates a new zone' do
-        post :create, {name: 'testing', number: 800}
+        post :create, name: 'testing', number: 800
         expect(Zone.count).to eq 1
         expect(response).to have_http_status(:created)
       end

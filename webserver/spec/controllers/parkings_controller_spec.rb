@@ -56,8 +56,8 @@ RSpec.describe ParkingsController, type: :controller do
 
     it 'list all parkings for a car' do
       FactoryGirl.create_list(:parking, 3)
-      last=nil
-      3.times{ last = FactoryGirl.create(:parking, :car_test) }
+      last = nil
+      3.times { last = FactoryGirl.create(:parking, :car_test) }
       get :index, license_plate: last.car.license_plate
       expect(JSON.parse(response.body).size).to eq(3)
     end

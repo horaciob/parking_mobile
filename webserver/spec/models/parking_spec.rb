@@ -102,12 +102,11 @@ RSpec.describe Parking, type: :model do
       2.times { FactoryGirl.create(:parking, :zone_test) }
       expect(Parking.zone_name('catamarca').size).to eq 2
     end
-
   end
 
   describe 'expirations' do
     it 'expired? respnds true if it expires' do
-      parking = FactoryGirl.create(:parking,:expired)
+      parking = FactoryGirl.create(:parking, :expired)
       expect(parking.expired?).to eq(true)
     end
 
@@ -117,4 +116,3 @@ RSpec.describe Parking, type: :model do
     end
   end
 end
-

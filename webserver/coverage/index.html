@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-01T15:12:56-03:00">2015-06-01T15:12:56-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-01T15:22:33-03:00">2015-06-01T15:22:33-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -423,7 +423,7 @@
       <tr>
         <td class="strong"><a href="#3c293f5958dbf5c71837de85c165fca3599df3d6" class="src_link" title="spec/models/parking_spec.rb">spec/models/parking_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>120</td>
+        <td>118</td>
         <td>58</td>
         <td>58</td>
         <td>0</td>
@@ -3913,7 +3913,7 @@
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">        post :create, {name: &#39;testing&#39;, number: 800}</code>
+          <code class="ruby">        post :create, name: &#39;testing&#39;, number: 800</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
@@ -6697,97 +6697,85 @@
         <li class="never" data-hits="" data-linenumber="105">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="106">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="107">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="108">
+        <li class="covered" data-hits="1" data-linenumber="107">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;expirations&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="109">
+        <li class="covered" data-hits="1" data-linenumber="108">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;expired? respnds true if it expires&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="110">
+        <li class="covered" data-hits="1" data-linenumber="109">
           <span class="hits">1</span>
           
-          <code class="ruby">      parking = FactoryGirl.create(:parking,:expired)</code>
+          <code class="ruby">      parking = FactoryGirl.create(:parking, :expired)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="111">
+        <li class="covered" data-hits="1" data-linenumber="110">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(parking.expired?).to eq(true)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="112">
+        <li class="never" data-hits="" data-linenumber="111">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="113">
+        <li class="never" data-hits="" data-linenumber="112">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="114">
+        <li class="covered" data-hits="1" data-linenumber="113">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;expires? respond false if not expired&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="115">
+        <li class="covered" data-hits="1" data-linenumber="114">
           <span class="hits">1</span>
           
           <code class="ruby">      parking = FactoryGirl.create(:parking)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="116">
+        <li class="covered" data-hits="1" data-linenumber="115">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(parking.expired?).to eq(false)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="117">
+        <li class="never" data-hits="" data-linenumber="116">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="118">
+        <li class="never" data-hits="" data-linenumber="117">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="119">
+        <li class="never" data-hits="" data-linenumber="118">
           
           
           <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="120">
-          
-          
-          <code class="ruby"></code>
         </li>
       
     </ol>
