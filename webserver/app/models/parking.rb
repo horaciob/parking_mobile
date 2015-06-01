@@ -24,8 +24,9 @@ class Parking < ActiveRecord::Base
 
   scope :status, -> (status) { where('status = ?', status) }
   scope :expires, -> (init, finish) { where('expires_at > ? and expires_at < ?', init, finish) }
-  scope :car, -> (license_plate) { joins(:cars).where('license_plate = ?', license_plate) }
-  scope :zone, -> (zone) { joins(:zones).where('zone = ?', zone) }
+  scope :license_plate, -> (license_plate) { joins(:car).where('license_plate = ?', license_plate) }
+  scope :zone_name, -> (zone_name) { joins(:zone).where('name = ?', zone_name) }
+  scope :zone_number, -> (zone_number) { joins(:zone).where('number = ?', zone_number) }
 
   validates :parking_units, presence: true
   validates :device, presence: true

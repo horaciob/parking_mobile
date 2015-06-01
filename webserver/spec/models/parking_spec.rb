@@ -84,16 +84,37 @@ RSpec.describe Parking, type: :model do
     end
 
     it 'filter by expires_at field'
-    it 'filter by license plate'
-    it 'filter by zone'
 
+    it 'filter by license plate' do
+      3.times { FactoryGirl.create(:parking) }
+      2.times { FactoryGirl.create(:parking, :car_test) }
+      expect(Parking.license_plate('ABC123').size).to eq 2
+    end
+
+    it 'filter by zone number' do
+      3.times { FactoryGirl.create(:parking) }
+      2.times { FactoryGirl.create(:parking, :zone_test) }
+      expect(Parking.zone_number('300').size).to eq 3
+    end
+
+    it 'filter by zone name' do
+      3.times { FactoryGirl.create(:parking) }
+      2.times { FactoryGirl.create(:parking, :zone_test) }
+      expect(Parking.zone_name('catamarca').size).to eq 2
+    end
+
+    it 'filter by zone name and number' do
+
+    end
   end
-  context '#status' do
-    describe 'expired?' do
-    end
 
-    describe 'need_to_be_expired?' do
-      it 'true if expired'
-    end
+end
+
+context '#status' do
+  describe 'expired?' do
+  end
+
+  describe 'need_to_be_expired?' do
+    it 'true if expired'
   end
 end

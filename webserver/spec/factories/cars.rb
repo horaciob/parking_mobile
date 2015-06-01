@@ -10,11 +10,15 @@
 
 FactoryGirl.define do
   factory :car do
-    license_plate  "AAA123"
+    license_plate  'AAA123'
   end
 
-  factory :test_car do
-    license_plate  "ABC123"
+  factory :car_test, class: Car do
+    license_plate  'ABC123'
+  end
+
+  factory :car_test1, class: Car do
+    license_plate  'BCA321'
   end
 end
 

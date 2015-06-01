@@ -10,7 +10,7 @@ RSpec.describe ParkingsController, type: :controller do
       },
       zone: {
         name: 'catamarca',
-        number: 100
+        number: 200
       },
       car: {
         license_plate: 'AAA123'

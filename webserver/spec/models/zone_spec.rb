@@ -32,7 +32,7 @@ RSpec.describe Zone, type: :model do
     context '#custom_find' do
       it 'finds by name and number' do
         FactoryGirl.create(:zone_catamarca)
-        expect(Zone.custom_find('catamarca', 100)).to eq(Zone.first)
+        expect(Zone.custom_find('catamarca', 200)).to eq(Zone.first)
       end
     end
   end

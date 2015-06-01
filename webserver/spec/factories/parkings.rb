@@ -20,9 +20,23 @@ FactoryGirl.define do
     zone
     device
     car
-    after :create do |p|
-      p.payments << create_list(:payment,2)
+
+    trait :zone_test do
+      association :zone, factory: [:zone_test]
     end
+
+    trait :device_test do
+      association :device, factory: [:device_test]
+    end
+
+    trait :car_test do
+      association :car, factory: [:car_test]
+    end
+
+    after :create do |p|
+      p.payments << create_list(:payment, 2)
+    end
+
     trait :allowed do
       status 'allowed'
       expires_at Time.now + 15 * 60
