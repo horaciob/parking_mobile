@@ -24,6 +24,6 @@ class Payment < ActiveRecord::Base
   scope :price, -> (price) { where('price = ?', price) }
   scope :units, -> (units) { where('units = ?', units) }
   scope :payment_method, -> (payment_method) { where('payment_method = ?', payment_method) }
-  scope :create_after, -> (payment_method) { where('create_at > ?', create_after) }
-  scope :create_before,  -> (payment_method) { where('create_at < ?', create_before) }
+  scope :create_after, -> (create_after) { where('created_at > ?', create_after) }
+  scope :create_before,  -> (create_before) { where('created_at < ?', create_before) }
 end

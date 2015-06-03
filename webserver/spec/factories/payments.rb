@@ -29,6 +29,8 @@ FactoryGirl.define do
     units 90
     payment_method 'test'
     status 'accepted'
+    created_at Time.now
+    updated_at Time.now
 
     trait :credit_card do
       payment_method 'credit_card'
@@ -43,6 +45,11 @@ FactoryGirl.define do
     end
     trait :pending do
       status 'pending'
+    end
+
+    trait :old do
+      created_at Time.now- 60 * 60 * 24
+      updated_at Time.now- 60 * 60 * 24
     end
   end
 

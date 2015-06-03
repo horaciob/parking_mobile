@@ -64,6 +64,10 @@ RSpec.describe ZonesController, type: :controller do
   describe '#show' do
     let(:zone) { FactoryGirl.create(:zone) }
 
+    it 'returns 404 if doesnt exist' do
+      get :show, id: 999
+      expect(response).to have_http_status 404
+    end
     it 'should return zone 200 if zone exist' do
       get :show, id: zone.id
       expect(response).to have_http_status 200

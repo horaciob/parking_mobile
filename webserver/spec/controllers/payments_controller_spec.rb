@@ -46,8 +46,17 @@ RSpec.describe PaymentsController, type: :controller do
       expect(JSON.parse(response.body).size).to eq 3
     end
 
-    it 'filter by create_after'
-    it 'filter by create_before'
+    it 'filter by create_after' do
+      2.times { FactoryGirl.create(:payment1, :old) }
+      get :index, create_after: Time.now - 60*60
+      expect(JSON.parse(response.body).count).to eq 3
+    end
+
+    it 'filter by create_before' do
+      3.times { FactoryGirl.create(:payment1, :old) }
+      get :index, create_before: Time.now - 60 * 60
+      expect(JSON.parse(response.body).count).to eq 3
+    end
   end
 
   describe '#show' do
