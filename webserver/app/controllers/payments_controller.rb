@@ -1,3 +1,4 @@
+# payments api
 class PaymentsController < ApplicationController
   def index
     @payments = Payment.filter(params.slice(:status, :price, :units, :payment_method,

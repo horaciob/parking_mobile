@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe PaymentsController, type: :controller do
   describe '#index' do
     before(:each) do
-      FactoryGirl.create_list(:payment1,3)
+      FactoryGirl.create_list(:payment1, 3)
     end
 
     it 'list all payments' do
@@ -60,9 +60,9 @@ RSpec.describe PaymentsController, type: :controller do
 
     it 'returns payments if exist' do
       get :show, id: payment.id
-      expect(JSON.parse(response.body).keys).to include('payment_method','data','parking_id',
-                                                        'device_id','status','price','units',
-                                                        'id','created_at','updated_at')
+      expect(JSON.parse(response.body).keys).to include('payment_method', 'data', 'parking_id',
+                                                        'device_id', 'status', 'price', 'units',
+                                                        'id', 'created_at', 'updated_at')
     end
 
     it 'returns 404 if not exist' do
@@ -70,5 +70,4 @@ RSpec.describe PaymentsController, type: :controller do
       expect(response).to have_http_status(404)
     end
   end
-
 end

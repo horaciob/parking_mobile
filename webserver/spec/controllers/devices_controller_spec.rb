@@ -48,7 +48,7 @@ RSpec.describe DevicesController, type: :controller do
       dev = FactoryGirl.create(:device)
       put :update, id: dev.id, user_agent: 'testing_changes'
       dev = Device.first
-      expect(dev.user_agent).to eq("testing_changes")
+      expect(dev.user_agent).to eq('testing_changes')
     end
 
     it 'returns 404 if record is not exist' do

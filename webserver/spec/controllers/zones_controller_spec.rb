@@ -62,7 +62,7 @@ RSpec.describe ZonesController, type: :controller do
   end
 
   describe '#show' do
-    let(:zone) {FactoryGirl.create(:zone)}
+    let(:zone) { FactoryGirl.create(:zone) }
 
     it 'should return zone 200 if zone exist' do
       get :show, id: zone.id
