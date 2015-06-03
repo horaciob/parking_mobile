@@ -16,6 +16,14 @@
 
 ## Payments methods
 class Payment < ActiveRecord::Base
+  include Filterable
+
   belongs_to :parking
   belongs_to :zone
+  scope :status, -> (status) { where('status = ?', status) }
+  scope :price, -> (price) { where('price = ?', price) }
+  scope :units, -> (units) { where('units = ?', units) }
+  scope :payment_method, -> (payment_method) { where('payment_method = ?', payment_method) }
+  scope :create_after, -> (payment_method) { where('create_at > ?', create_after) }
+  scope :create_before,  -> (payment_method) { where('create_at < ?', create_before) }
 end

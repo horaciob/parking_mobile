@@ -1,6 +1,5 @@
 # Zone handler
 class ZonesController < ApplicationController
-  skip_before_filter :verify_authenticity_token
   def index
     @zone = Zone.all
     render json: @zone.to_json
