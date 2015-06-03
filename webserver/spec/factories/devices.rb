@@ -12,12 +12,12 @@
 
 FactoryGirl.define do
   factory :device do
-    notification_token 'fasdfadsfdas312312'
+    notification_token 'test_token'
     user_agent 'agent/test 5.0'
     car
   end
 
-  factory :test_device do
+  factory :device_test, class: Device do
     notification_token 'fasas312312'
     user_agent 'test/android 5.0'
   end

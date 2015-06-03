@@ -31,6 +31,6 @@ class ZonesController < ApplicationController
   private
 
   def zone_params
-    params.permit(:name, :number,:unit_price, :unit_time)
+    params.permit(:name, :number, :unit_price, :unit_time)
   end
 end
