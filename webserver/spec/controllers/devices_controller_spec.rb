@@ -45,6 +45,11 @@ RSpec.describe DevicesController, type: :controller do
       dev = Device.first
       expect(dev.user_agent).to eq("testing_changes")
     end
+
+    it 'returns 404 if record is not exist' do
+      put :update, id: 987, user_agent: 'testing_changes', notification_token: 'fasdfasd'
+      expect(response.response_code).to eq(404)
+    end
   end
 
   describe '#create' do

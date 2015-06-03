@@ -7,8 +7,13 @@ class ApplicationController < ActionController::Base
     error = {}
     error[parameter_missing_exception.param] = ['parameter is required']
     response = { errors: [error] }
-    respond_to do |format|
-      format.json { render json: response, status: :unprocessable_entity }
-    end
+    render json: response, status: :unprocessable_entity
+  end
+
+  rescue_from ActiveRecord::RecordNotFound do |missing_model|
+    error = {}
+    error[missing_model] = ['Not Found']
+    response = { errors: [error] }
+    render json: response, status: 404
   end
 end
