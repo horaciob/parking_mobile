@@ -28,6 +28,11 @@ class ZonesController < ApplicationController
     end
   end
 
+  def show
+    zone = Zone.find(params[:id])
+    render json: zone, status: 200
+  end
+
   private
 
   def zone_params

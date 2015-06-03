@@ -30,6 +30,11 @@ RSpec.describe DevicesController, type: :controller do
       expect(JSON.parse(response.body).keys).to include('notification_token', 'id', 'user_agent',
                                                         'created_at', 'updated_at', 'car_id')
     end
+
+    it 'returns 404 if record is not exist' do
+      get :update, id: 987
+      expect(response.response_code).to eq(404)
+    end
   end
 
   describe '#update' do

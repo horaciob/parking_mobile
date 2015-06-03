@@ -63,4 +63,19 @@ RSpec.describe ZonesController, type: :controller do
       expect(response).to have_http_status(404)
     end
   end
+
+  describe '#show' do
+    it 'should return zone 200 if zone exist' do
+      zone = FactoryGirl.create(:zone)
+      get :show, id: zone.id
+      expect(response).to have_http_status 200
+    end
+
+    it 'should return valid zone' do
+      zone = FactoryGirl.create(:zone)
+      get :show, id: zone.id
+      expect(JSON.parse(response.body).keys).to include('name', 'number', 'created_at', 'updated_at',
+                                                        'unit_price', 'unit_time', 'id')
+    end
+  end
 end
