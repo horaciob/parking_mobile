@@ -28,18 +28,6 @@ RSpec.describe PaymentsController, type: :controller do
       expect(JSON.parse(response.body).size).to eq 3
     end
 
-    it 'filter by units' do
-      3.times { FactoryGirl.create(:payment1, :low_price) }
-      get :index, price: 1
-      expect(JSON.parse(response.body).size).to eq 3
-    end
-
-    it 'filter by units' do
-      3.times { FactoryGirl.create(:payment1, :low_units) }
-      get :index, units: 1
-      expect(JSON.parse(response.body).size).to eq 3
-    end
-
     it 'filter by status' do
       3.times { FactoryGirl.create(:payment1, :pending) }
       get :index, status: 'pending'
@@ -70,7 +58,7 @@ RSpec.describe PaymentsController, type: :controller do
     it 'returns payments if exist' do
       get :show, id: payment.id
       expect(JSON.parse(response.body).keys).to include('payment_method', 'data', 'parking_id',
-                                                        'device_id', 'status', 'price', 'units',
+                                                        'device_id', 'status', 'price',
                                                         'id', 'created_at', 'updated_at')
     end
 

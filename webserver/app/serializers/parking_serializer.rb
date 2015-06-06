@@ -4,7 +4,7 @@
 #
 #  id            :integer          not null, primary key
 #  expires_at    :datetime
-#  status        :string(255)
+#  status        :string(255)      default("pending")
 #  parking_units :integer
 #  device_id     :integer
 #  zone_id       :integer
@@ -14,21 +14,21 @@
 #
 
 class ParkingSerializer < ActiveModel::Serializer
-    attributes :id, :expires_at, :status, :parking_units, :device ,:zone ,
-               :created_at, :updated_at, :zone, :payments, :car
-    def device
-      object.device
-    end
+  attributes :id, :expires_at, :status, :parking_units, :device, :zone ,
+             :created_at, :updated_at, :zone, :payments, :car
+  def device
+    object.device
+  end
 
-    def zone
-      object.zone
-    end
+  def zone
+    object.zone
+  end
 
-    def payments
-      object.payments
-    end
+  def payments
+    object.payments
+  end
 
-    def car
-      object.car
-    end
+  def car
+    object.car
+  end
 end

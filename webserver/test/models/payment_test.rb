@@ -7,9 +7,8 @@
 #  data           :string(255)
 #  parking_id     :integer
 #  device_id      :integer
-#  status         :string(255)
+#  status         :string(255)      default("pending")
 #  price          :float(24)
-#  units          :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #

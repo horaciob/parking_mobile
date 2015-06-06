@@ -7,9 +7,8 @@
 #  data           :string(255)
 #  parking_id     :integer
 #  device_id      :integer
-#  status         :string(255)
+#  status         :string(255)      default("pending")
 #  price          :float(24)
-#  units          :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #
@@ -22,7 +21,6 @@ class Payment < ActiveRecord::Base
   belongs_to :zone
   scope :status, -> (status) { where('status = ?', status) }
   scope :price, -> (price) { where('price = ?', price) }
-  scope :units, -> (units) { where('units = ?', units) }
   scope :payment_method, -> (payment_method) { where('payment_method = ?', payment_method) }
   scope :create_after, -> (create_after) { where('created_at > ?', create_after) }
   scope :create_before,  -> (create_before) { where('created_at < ?', create_before) }

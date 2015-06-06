@@ -4,7 +4,7 @@
 #
 #  id            :integer          not null, primary key
 #  expires_at    :datetime
-#  status        :string(255)
+#  status        :string(255)      default("pending")
 #  parking_units :integer
 #  device_id     :integer
 #  zone_id       :integer
@@ -12,7 +12,6 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
-
 
 FactoryGirl.define do
   factory :parking do

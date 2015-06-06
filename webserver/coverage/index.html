@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-06T02:35:38-03:00">2015-06-06T02:35:38-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-06T09:58:20-03:00">2015-06-06T09:58:20-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.48%</span></span>
+    (<span class="covered_percent"><span class="green">98.45%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.91
+         1.89
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>51</b> files in total.
-    <b>594</b> relevant lines. 
-    <span class="green"><b>585</b> lines covered</span> and
+    <b>580</b> relevant lines. 
+    <span class="green"><b>571</b> lines covered</span> and
     <span class="red"><b>9</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -87,7 +87,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>3.7</td>
+        <td>3.1</td>
       </tr>
       
       <tr>
@@ -167,7 +167,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>7.0</td>
+        <td>6.0</td>
       </tr>
       
       <tr>
@@ -193,11 +193,11 @@
       <tr>
         <td class="strong"><a href="#bac9f7d8e70cd821a49615bc0f0cd7a888215d2b" class="src_link" title="app/models/payment.rb">app/models/payment.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>29</td>
-        <td>10</td>
-        <td>10</td>
+        <td>27</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>1.6</td>
       </tr>
       
       <tr>
@@ -393,11 +393,11 @@
       <tr>
         <td class="strong"><a href="#40dd402c2327f9e411f3efdc3c323b2cb182be48" class="src_link" title="spec/controllers/payments_controller_spec.rb">spec/controllers/payments_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>82</td>
-        <td>50</td>
-        <td>50</td>
+        <td>70</td>
+        <td>42</td>
+        <td>42</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
@@ -433,7 +433,7 @@
       <tr>
         <td class="strong"><a href="#6c180c6e519b61ab12757df44738306a11631204" class="src_link" title="spec/factories/parkings.rb">spec/factories/parkings.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>50</td>
+        <td>49</td>
         <td>20</td>
         <td>20</td>
         <td>0</td>
@@ -443,9 +443,9 @@
       <tr>
         <td class="strong"><a href="#ad085d1db97688689d6ae74ecba676b27e3624ec" class="src_link" title="spec/factories/payments.rb">spec/factories/payments.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>62</td>
-        <td>29</td>
-        <td>29</td>
+        <td>53</td>
+        <td>24</td>
+        <td>24</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -533,7 +533,7 @@
       <tr>
         <td class="strong"><a href="#5fe280dbb33e0595f71068a663b961b508526d7f" class="src_link" title="spec/models/payment_spec.rb">spec/models/payment_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>20</td>
+        <td>19</td>
         <td>2</td>
         <td>2</td>
         <td>0</td>
@@ -779,7 +779,7 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">    render json: @dev, root: false ,status: 200</code>
+          <code class="ruby">    render json: @dev, root: false, status: 200</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -815,7 +815,7 @@
         <li class="covered" data-hits="2" data-linenumber="16">
           <span class="hits">2</span>
           
-          <code class="ruby">    render json: @dev, root: false,status: 200</code>
+          <code class="ruby">    render json: @dev, root: false, status: 200</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
@@ -1256,10 +1256,10 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="4">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="7" data-linenumber="4">
+          <span class="hits">7</span>
           
-          <code class="ruby">    @payments = Payment.filter(params.slice(:status, :price, :units, :payment_method,</code>
+          <code class="ruby">    @payments = Payment.filter(params.slice(:status, :price, :payment_method,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -1268,10 +1268,10 @@
           <code class="ruby">                                            :create_after, :create_before))</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="6">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="7" data-linenumber="6">
+          <span class="hits">7</span>
           
-          <code class="ruby">    render json: @payments, root: false ,status: 200</code>
+          <code class="ruby">    render json: @payments, root: false, status: 200</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -1301,7 +1301,7 @@
         <li class="covered" data-hits="2" data-linenumber="11">
           <span class="hits">2</span>
           
-          <code class="ruby">    render json: @payment, root: false ,status: 200</code>
+          <code class="ruby">    render json: @payment, root: false, status: 200</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -1934,20 +1934,20 @@
           <code class="ruby">    def filter(filtering_params)</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="9">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="12" data-linenumber="9">
+          <span class="hits">12</span>
           
           <code class="ruby">      results = where(nil)</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="10">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="12" data-linenumber="10">
+          <span class="hits">12</span>
           
           <code class="ruby">      filtering_params.each do |key, value|</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="11">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="8" data-linenumber="11">
+          <span class="hits">8</span>
           
           <code class="ruby">        results = results.public_send(key, value) if value.present?</code>
         </li>
@@ -1958,8 +1958,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="13">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="12" data-linenumber="13">
+          <span class="hits">12</span>
           
           <code class="ruby">      results</code>
         </li>
@@ -2177,7 +2177,7 @@
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">#  status        :string(255)</code>
+          <code class="ruby">#  status        :string(255)      default(&quot;pending&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -2483,8 +2483,8 @@
     <h3>app/models/payment.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2549,7 +2549,7 @@
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">#  status         :string(255)</code>
+          <code class="ruby">#  status         :string(255)      default(&quot;pending&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -2561,106 +2561,94 @@
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">#  units          :integer</code>
+          <code class="ruby">#  created_at     :datetime         not null</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">#  created_at     :datetime         not null</code>
+          <code class="ruby">#  updated_at     :datetime         not null</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">#  updated_at     :datetime         not null</code>
+          <code class="ruby">#</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
           <code class="ruby">## Payments methods</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">class Payment &lt; ActiveRecord::Base</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">  include Filterable</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">  belongs_to :parking</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">  belongs_to :zone</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="23">
+        <li class="covered" data-hits="2" data-linenumber="22">
           <span class="hits">2</span>
           
           <code class="ruby">  scope :status, -&gt; (status) { where(&#39;status = ?&#39;, status) }</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="24">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="23">
+          <span class="hits">2</span>
           
           <code class="ruby">  scope :price, -&gt; (price) { where(&#39;price = ?&#39;, price) }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="25">
-          <span class="hits">2</span>
-          
-          <code class="ruby">  scope :units, -&gt; (units) { where(&#39;units = ?&#39;, units) }</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="26">
+        <li class="covered" data-hits="2" data-linenumber="24">
           <span class="hits">2</span>
           
           <code class="ruby">  scope :payment_method, -&gt; (payment_method) { where(&#39;payment_method = ?&#39;, payment_method) }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="27">
+        <li class="covered" data-hits="2" data-linenumber="25">
           <span class="hits">2</span>
           
           <code class="ruby">  scope :create_after, -&gt; (create_after) { where(&#39;created_at &gt; ?&#39;, create_after) }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="28">
+        <li class="covered" data-hits="2" data-linenumber="26">
           <span class="hits">2</span>
           
           <code class="ruby">  scope :create_before,  -&gt; (create_before) { where(&#39;created_at &lt; ?&#39;, create_before) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">end</code>
@@ -2909,7 +2897,7 @@
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">#  status        :string(255)</code>
+          <code class="ruby">#  status        :string(255)      default(&quot;pending&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -2969,31 +2957,31 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">    attributes :id, :expires_at, :status, :parking_units, :device ,:zone ,</code>
+          <code class="ruby">  attributes :id, :expires_at, :status, :parking_units, :device, :zone ,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">               :created_at, :updated_at, :zone, :payments, :car</code>
+          <code class="ruby">             :created_at, :updated_at, :zone, :payments, :car</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">    def device</code>
+          <code class="ruby">  def device</code>
         </li>
       
         <li class="covered" data-hits="8" data-linenumber="20">
           <span class="hits">8</span>
           
-          <code class="ruby">      object.device</code>
+          <code class="ruby">    object.device</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -3005,19 +2993,19 @@
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">    def zone</code>
+          <code class="ruby">  def zone</code>
         </li>
       
         <li class="covered" data-hits="16" data-linenumber="24">
           <span class="hits">16</span>
           
-          <code class="ruby">      object.zone</code>
+          <code class="ruby">    object.zone</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
@@ -3029,19 +3017,19 @@
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">    def payments</code>
+          <code class="ruby">  def payments</code>
         </li>
       
         <li class="covered" data-hits="8" data-linenumber="28">
           <span class="hits">8</span>
           
-          <code class="ruby">      object.payments</code>
+          <code class="ruby">    object.payments</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
@@ -3053,19 +3041,19 @@
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">    def car</code>
+          <code class="ruby">  def car</code>
         </li>
       
         <li class="covered" data-hits="8" data-linenumber="32">
           <span class="hits">8</span>
           
-          <code class="ruby">      object.car</code>
+          <code class="ruby">    object.car</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
@@ -3149,7 +3137,7 @@
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">#  status         :string(255)</code>
+          <code class="ruby">#  status         :string(255)      default(&quot;pending&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -3161,31 +3149,31 @@
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">#  units          :integer</code>
+          <code class="ruby">#  created_at     :datetime         not null</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">#  created_at     :datetime         not null</code>
+          <code class="ruby">#  updated_at     :datetime         not null</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">#  updated_at     :datetime         not null</code>
+          <code class="ruby">#</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># serializer</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
@@ -3197,7 +3185,7 @@
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">  attributes :id, :payment_method, :data, :parking_id, :device_id, :status,:price, :units, :created_at, :updated_at</code>
+          <code class="ruby">  attributes :id, :payment_method, :data, :parking_id, :device_id, :status, :price, :created_at, :updated_at</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
@@ -5351,8 +5339,8 @@
     <h3>spec/controllers/payments_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>50</b> relevant lines. 
-      <span class="green"><b>50</b> lines covered</span> and
+      <b>42</b> relevant lines. 
+      <span class="green"><b>42</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -5390,8 +5378,8 @@
           <code class="ruby">    before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="6">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="7" data-linenumber="6">
+          <span class="hits">7</span>
           
           <code class="ruby">      FactoryGirl.create_list(:payment1, 3)</code>
         </li>
@@ -5543,19 +5531,19 @@
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;filter by units&#39; do</code>
+          <code class="ruby">    it &#39;filter by status&#39; do</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="32">
           <span class="hits">4</span>
           
-          <code class="ruby">      3.times { FactoryGirl.create(:payment1, :low_price) }</code>
+          <code class="ruby">      3.times { FactoryGirl.create(:payment1, :pending) }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">      get :index, price: 1</code>
+          <code class="ruby">      get :index, status: &#39;pending&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="34">
@@ -5579,25 +5567,25 @@
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;filter by units&#39; do</code>
+          <code class="ruby">    it &#39;filter by create_after&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="38">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="3" data-linenumber="38">
+          <span class="hits">3</span>
           
-          <code class="ruby">      3.times { FactoryGirl.create(:payment1, :low_units) }</code>
+          <code class="ruby">      2.times { FactoryGirl.create(:payment1, :old) }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">      get :index, units: 1</code>
+          <code class="ruby">      get :index, create_after: Time.now - 60*60</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(JSON.parse(response.body).size).to eq 3</code>
+          <code class="ruby">      expect(JSON.parse(response.body).count).to eq 3</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
@@ -5615,25 +5603,25 @@
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;filter by status&#39; do</code>
+          <code class="ruby">    it &#39;filter by create_before&#39; do</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="44">
           <span class="hits">4</span>
           
-          <code class="ruby">      3.times { FactoryGirl.create(:payment1, :pending) }</code>
+          <code class="ruby">      3.times { FactoryGirl.create(:payment1, :old) }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">      get :index, status: &#39;pending&#39;</code>
+          <code class="ruby">      get :index, create_before: Time.now - 60 * 60</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(JSON.parse(response.body).size).to eq 3</code>
+          <code class="ruby">      expect(JSON.parse(response.body).count).to eq 3</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
@@ -5645,97 +5633,97 @@
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="49">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;filter by create_after&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="50">
-          <span class="hits">3</span>
-          
-          <code class="ruby">      2.times { FactoryGirl.create(:payment1, :old) }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      get :index, create_after: Time.now - 60*60</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(JSON.parse(response.body).count).to eq 3</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="53">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;filter by create_before&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="56">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      3.times { FactoryGirl.create(:payment1, :old) }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      get :index, create_before: Time.now - 60 * 60</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(JSON.parse(response.body).count).to eq 3</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="60">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
+        <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;#show&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="63">
+        <li class="covered" data-hits="3" data-linenumber="51">
           <span class="hits">3</span>
           
           <code class="ruby">    let(:payment) { FactoryGirl.create(:payment) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;returns 200 when exist&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get :show, id: payment.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to have_http_status(200)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;returns payments if exist&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get :show, id: payment.id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(JSON.parse(response.body).keys).to include(&#39;payment_method&#39;, &#39;data&#39;, &#39;parking_id&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">                                                        &#39;device_id&#39;, &#39;status&#39;, &#39;price&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">                                                        &#39;id&#39;, &#39;created_at&#39;, &#39;updated_at&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
@@ -5747,19 +5735,19 @@
         <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;returns 200 when exist&#39; do</code>
+          <code class="ruby">    it &#39;returns 404 if not exist&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="66">
           <span class="hits">1</span>
           
-          <code class="ruby">      get :show, id: payment.id</code>
+          <code class="ruby">      get :show, id: 987</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(response).to have_http_status(200)</code>
+          <code class="ruby">      expect(response).to have_http_status(404)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
@@ -5771,82 +5759,10 @@
         <li class="never" data-hits="" data-linenumber="69">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="70">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;returns payments if exist&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="71">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      get :show, id: payment.id</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="72">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(JSON.parse(response.body).keys).to include(&#39;payment_method&#39;, &#39;data&#39;, &#39;parking_id&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby">                                                        &#39;device_id&#39;, &#39;status&#39;, &#39;price&#39;, &#39;units&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="74">
-          
-          
-          <code class="ruby">                                                        &#39;id&#39;, &#39;created_at&#39;, &#39;updated_at&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="75">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="76">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="77">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;returns 404 if not exist&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="78">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      get :show, id: 987</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="79">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(response).to have_http_status(404)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="80">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="81">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">end</code>
@@ -6743,7 +6659,7 @@
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">#  status        :string(255)</code>
+          <code class="ruby">#  status        :string(255)      default(&quot;pending&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -6794,211 +6710,205 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">FactoryGirl.define do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">  factory :parking do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">    parking_units 2</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">    zone</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">    device</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">    car</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">    trait :zone_test do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
           <code class="ruby">      association :zone, factory: [:zone_test]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">    trait :device_test do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
           <code class="ruby">      association :device, factory: [:device_test]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
           <code class="ruby">    trait :car_test do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">      association :car, factory: [:car_test]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
           <code class="ruby">    after :create do |p|</code>
         </li>
       
-        <li class="covered" data-hits="42" data-linenumber="37">
+        <li class="covered" data-hits="42" data-linenumber="36">
           <span class="hits">42</span>
           
           <code class="ruby">      p.payments &lt;&lt; create_list(:payment, 2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
           <code class="ruby">    trait :allowed do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
           <code class="ruby">      status &#39;allowed&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
           <code class="ruby">      expires_at Time.now + 15 * 60</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
           <code class="ruby">    trait :expired do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
+        <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
           <code class="ruby">      status &#39;expired&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
+        <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
           <code class="ruby">      expires_at Time.now - 10 * 60</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">end</code>
@@ -7013,8 +6923,8 @@
     <h3>spec/factories/payments.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>29</b> relevant lines. 
-      <span class="green"><b>29</b> lines covered</span> and
+      <b>24</b> relevant lines. 
+      <span class="green"><b>24</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -7079,7 +6989,7 @@
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">#  status         :string(255)</code>
+          <code class="ruby">#  status         :string(255)      default(&quot;pending&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -7091,133 +7001,133 @@
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">#  units          :integer</code>
+          <code class="ruby">#  created_at     :datetime         not null</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">#  created_at     :datetime         not null</code>
+          <code class="ruby">#  updated_at     :datetime         not null</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">#  updated_at     :datetime         not null</code>
+          <code class="ruby">#</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">#</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">FactoryGirl.define do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">  factory :payment do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">    data &#39;{&quot;data1&quot;:&quot;value1&quot;}&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    price 30</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">    price 30</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    units 90</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
-          
           <code class="ruby">    payment_method &#39;test&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">  factory :payment1, class: Payment do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
           <code class="ruby">    data &#39;{&quot;data1&quot;:&quot;value1&quot;}&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
           <code class="ruby">    price 30</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    units 90</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">    payment_method &#39;test&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">    status &#39;accepted&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
           <code class="ruby">    created_at Time.now</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
           <code class="ruby">    updated_at Time.now</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    trait :credit_card do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      payment_method &#39;credit_card&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
@@ -7229,13 +7139,13 @@
         <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">    trait :credit_card do</code>
+          <code class="ruby">    trait :low_price do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
-          <code class="ruby">      payment_method &#39;credit_card&#39;</code>
+          <code class="ruby">      price 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
@@ -7253,13 +7163,13 @@
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">    trait :low_price do</code>
+          <code class="ruby">    trait :pending do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
-          <code class="ruby">      price 1</code>
+          <code class="ruby">      status &#39;pending&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
@@ -7277,118 +7187,64 @@
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">    trait :low_units do</code>
+          <code class="ruby">    trait :old do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
-          <code class="ruby">      units 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    trait :pending do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="47">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      status &#39;pending&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="50">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    trait :old do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
-          
           <code class="ruby">      created_at Time.now- 60 * 60 * 24</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
           <code class="ruby">      updated_at Time.now- 60 * 60 * 24</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
           <code class="ruby">  factory :payment2 do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
+        <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
           <code class="ruby">    data &#39;{&quot;data1&quot;:&quot;value1&quot;}&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
+        <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
           <code class="ruby">    price 30</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    units 90</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">end</code>
@@ -8651,7 +8507,7 @@
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">#  status        :string(255)</code>
+          <code class="ruby">#  status        :string(255)      default(&quot;pending&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -9395,7 +9251,7 @@
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">#  status         :string(255)</code>
+          <code class="ruby">#  status         :string(255)      default(&quot;pending&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -9407,52 +9263,46 @@
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">#  units          :integer</code>
+          <code class="ruby">#  created_at     :datetime         not null</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">#  created_at     :datetime         not null</code>
+          <code class="ruby">#  updated_at     :datetime         not null</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">#  updated_at     :datetime         not null</code>
+          <code class="ruby">#</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">#</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">require &#39;rails_helper&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">RSpec.describe Payment, type: :model do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>

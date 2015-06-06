@@ -5,9 +5,8 @@ class CreatePayments < ActiveRecord::Migration
       t.string :data
       t.integer :parking_id
       t.integer :device_id
-      t.string :status
+      t.string :status, default: 'pending'
       t.float :price
-      t.integer :units
       t.timestamps null: false
     end
   end

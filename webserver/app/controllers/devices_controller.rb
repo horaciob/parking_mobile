@@ -7,13 +7,13 @@ class DevicesController < ApplicationController
 
   def show
     @dev = Device.find(params[:id])
-    render json: @dev, root: false ,status: 200
+    render json: @dev, root: false, status: 200
   end
 
   def update
     @dev = Device.find(params[:id])
     @dev = @dev.update_attributes(update_parameters)
-    render json: @dev, root: false,status: 200
+    render json: @dev, root: false, status: 200
   end
 
   def create
