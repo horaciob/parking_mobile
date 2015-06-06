@@ -23,20 +23,25 @@ class ParkingsController < ApplicationController
     end
   end
 
+  def show
+    parking = Parking.find(params[:id])
+    render json: parking, status: 200
+  end
+
   private
 
   def zone_find_params
     {
-      zone: params[:parking].require(:zone).permit(:name, :number)
+      zone: params.require(:zone).permit(:name, :number)
     }
   end
 
   def parking_creation_params
     {
-      parking_units: params[:parking].require(:parking_units).to_i,
-      device_attributes: params[:parking].require(:device).permit(:notification_token, :user_agent),
-      car_attributes: params[:parking].require(:car).permit(:license_plate),
-      payments_attributes: [params[:parking].require(:payment).permit(:payment_method, :data)]
+      parking_units: params.require(:parking_units).to_i,
+      device_attributes: params.require(:device).permit(:notification_token, :user_agent),
+      car_attributes: params.require(:car).permit(:license_plate),
+      payments_attributes: [params.require(:payment).permit(:payment_method, :data)]
     }
   end
 end

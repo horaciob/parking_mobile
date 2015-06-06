@@ -25,7 +25,7 @@ RSpec.describe ParkingsController, type: :controller do
   describe '#creation' do
     it 'Allow create a parking and his nested attributes' do
       FactoryGirl.create(:zone_catamarca)
-      post :create, parking: complete_params
+      post :create, complete_params
       expect(response).to have_http_status(:ok)
       expect(Car.count).to eq(1)
       expect(Device.count).to eq(1)
@@ -41,7 +41,7 @@ RSpec.describe ParkingsController, type: :controller do
     #end
 
     it 'Cannot create a parking if zone doesn\'t exist' do
-      post :create, parking: complete_params
+      post :create, complete_params
       expect(response).to have_http_status(404)
     end
   end
@@ -62,6 +62,22 @@ RSpec.describe ParkingsController, type: :controller do
       expect(JSON.parse(response.body).size).to eq(3)
     end
     it 'list filtering by expired date'
+  end
+
+  describe '#show' do
+    let(:parking) {FactoryGirl.create(:parking)}
+
+    it 'show a parking' do
+      get :show, parking.id
+      expect(JSON.parse(response.body).keys).to include(:id, :expired_at, :status,
+                                                        :parking, :device, :zone,
+                                                        :car, :created_at, :updated_at )
+    end
+
+    it 'returns 404 if parking does not exist' do
+      get :show, id: 789
+      expect(response).to have_http_status(404)
+    end
   end
 
   describe '#PUT' do
