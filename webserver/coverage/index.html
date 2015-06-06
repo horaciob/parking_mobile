@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-06T01:39:29-03:00">2015-06-06T01:39:29-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-06T02:35:38-03:00">2015-06-06T02:35:38-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.12%</span></span>
+    (<span class="covered_percent"><span class="green">98.48%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.86
+         1.91
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>49</b> files in total.
-    <b>584</b> relevant lines. 
-    <span class="green"><b>573</b> lines covered</span> and
-    <span class="red"><b>11</b> lines missed </span>
+    <b>51</b> files in total.
+    <b>594</b> relevant lines. 
+    <span class="green"><b>585</b> lines covered</span> and
+    <span class="red"><b>9</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -72,12 +72,12 @@
       
       <tr>
         <td class="strong"><a href="#dda27a12bfe602f28f317a429dae8d5318cefa4a" class="src_link" title="app/controllers/parkings_controller.rb">app/controllers/parkings_controller.rb</a></td>
-        <td class="green strong">91.3 %</td>
+        <td class="green strong">95.65 %</td>
         <td>47</td>
         <td>23</td>
-        <td>21</td>
-        <td>2</td>
-        <td>1.2</td>
+        <td>22</td>
+        <td>1</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
@@ -208,6 +208,26 @@
         <td>11</td>
         <td>0</td>
         <td>14.3</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#4f279f269e802a8674a5515a61d3e49923aa0ed8" class="src_link" title="app/serializers/parking_serializer.rb">app/serializers/parking_serializer.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>34</td>
+        <td>10</td>
+        <td>10</td>
+        <td>0</td>
+        <td>4.6</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#2cb404c0f6e3a442ac25be6f8a064ae8f03a3158" class="src_link" title="app/serializers/payment_serializer.rb">app/serializers/payment_serializer.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>20</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -362,11 +382,11 @@
       
       <tr>
         <td class="strong"><a href="#930d0470e97a1f037c57740b0a0fc3b54b75bd50" class="src_link" title="spec/controllers/parkings_controller_spec.rb">spec/controllers/parkings_controller_spec.rb</a></td>
-        <td class="green strong">97.44 %</td>
+        <td class="green strong">100.0 %</td>
         <td>87</td>
         <td>39</td>
-        <td>38</td>
-        <td>1</td>
+        <td>39</td>
+        <td>0</td>
         <td>1.1</td>
       </tr>
       
@@ -443,9 +463,9 @@
       <tr>
         <td class="strong"><a href="#46d28319ed2801e11b2be52bc4407b1b9806a402" class="src_link" title="spec/helpers/devices_helper_spec.rb">spec/helpers/devices_helper_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>3</td>
-        <td>3</td>
+        <td>14</td>
+        <td>2</td>
+        <td>2</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -463,9 +483,9 @@
       <tr>
         <td class="strong"><a href="#ae37225b4b380054c402f17d1f28adcacf89c1f2" class="src_link" title="spec/helpers/payments_helper_spec.rb">spec/helpers/payments_helper_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>3</td>
-        <td>3</td>
+        <td>14</td>
+        <td>2</td>
+        <td>2</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -729,7 +749,7 @@
         <li class="covered" data-hits="3" data-linenumber="5">
           <span class="hits">3</span>
           
-          <code class="ruby">    render json: @devs, status: 200</code>
+          <code class="ruby">    render json: @devs, root: false, status: 200</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -759,7 +779,7 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">    render json: @dev, status: 200</code>
+          <code class="ruby">    render json: @dev, root: false ,status: 200</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -795,7 +815,7 @@
         <li class="covered" data-hits="2" data-linenumber="16">
           <span class="hits">2</span>
           
-          <code class="ruby">    render json: @dev, status: 200</code>
+          <code class="ruby">    render json: @dev, root: false,status: 200</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
@@ -825,7 +845,7 @@
         <li class="covered" data-hits="2" data-linenumber="21">
           <span class="hits">2</span>
           
-          <code class="ruby">    render json: @dev, status: 201</code>
+          <code class="ruby">    render json: @dev, root: false, status: 201</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -907,11 +927,11 @@
         <div class="source_table" id="dda27a12bfe602f28f317a429dae8d5318cefa4a">
   <div class="header">
     <h3>app/controllers/parkings_controller.rb</h3>
-    <h4><span class="green">91.3 %</span> covered</h4>
+    <h4><span class="green">95.65 %</span> covered</h4>
     <div>
       <b>23</b> relevant lines. 
-      <span class="green"><b>21</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="green"><b>22</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -1035,7 +1055,7 @@
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">      render json: parking.to_json</code>
+          <code class="ruby">      render json: parking.to_json, root: false</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
@@ -1074,16 +1094,16 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="27">
+          <span class="hits">2</span>
           
           <code class="ruby">    parking = Parking.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    render json: parking, status: 200</code>
+          <code class="ruby">    render json: parking, root: false, status: 200</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
@@ -1251,7 +1271,7 @@
         <li class="covered" data-hits="9" data-linenumber="6">
           <span class="hits">9</span>
           
-          <code class="ruby">    render json: @payments, status: 200</code>
+          <code class="ruby">    render json: @payments, root: false ,status: 200</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -1281,7 +1301,7 @@
         <li class="covered" data-hits="2" data-linenumber="11">
           <span class="hits">2</span>
           
-          <code class="ruby">    render json: @payment, status: 200</code>
+          <code class="ruby">    render json: @payment, root: false ,status: 200</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -2830,6 +2850,366 @@
           
           
           <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="4f279f269e802a8674a5515a61d3e49923aa0ed8">
+  <div class="header">
+    <h3>app/serializers/parking_serializer.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>10</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby"># == Schema Information</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">#</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"># Table name: parkings</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">#</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">#  id            :integer          not null, primary key</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">#  expires_at    :datetime</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">#  status        :string(255)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">#  parking_units :integer</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">#  device_id     :integer</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">#  zone_id       :integer</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">#  car_id        :integer</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">#  created_at    :datetime         not null</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">#  updated_at    :datetime         not null</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">#</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ParkingSerializer &lt; ActiveModel::Serializer</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attributes :id, :expires_at, :status, :parking_units, :device ,:zone ,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">               :created_at, :updated_at, :zone, :payments, :car</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def device</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="20">
+          <span class="hits">8</span>
+          
+          <code class="ruby">      object.device</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def zone</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="24">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      object.zone</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def payments</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="28">
+          <span class="hits">8</span>
+          
+          <code class="ruby">      object.payments</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def car</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="32">
+          <span class="hits">8</span>
+          
+          <code class="ruby">      object.car</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="2cb404c0f6e3a442ac25be6f8a064ae8f03a3158">
+  <div class="header">
+    <h3>app/serializers/payment_serializer.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby"># == Schema Information</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">#</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"># Table name: payments</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">#</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">#  id             :integer          not null, primary key</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">#  payment_method :string(255)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">#  data           :string(255)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">#  parking_id     :integer</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">#  device_id      :integer</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">#  status         :string(255)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">#  price          :float(24)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">#  units          :integer</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">#  created_at     :datetime         not null</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">#  updated_at     :datetime         not null</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">#</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class PaymentSerializer &lt; ActiveModel::Serializer</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attributes :id, :payment_method, :data, :parking_id, :device_id, :status,:price, :units, :created_at, :updated_at</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
         </li>
       
     </ol>
@@ -4429,11 +4809,11 @@
         <div class="source_table" id="930d0470e97a1f037c57740b0a0fc3b54b75bd50">
   <div class="header">
     <h3>spec/controllers/parkings_controller_spec.rb</h3>
-    <h4><span class="green">97.44 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>39</b> relevant lines. 
-      <span class="green"><b>38</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="green"><b>39</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -4863,25 +5243,25 @@
         <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
-          <code class="ruby">      get :show, parking.id</code>
+          <code class="ruby">      get :show, id: parking.id</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="72">
+        <li class="covered" data-hits="1" data-linenumber="72">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      expect(JSON.parse(response.body).keys).to include(:id, :expired_at, :status,</code>
+          <code class="ruby">      expect(JSON.parse(response.body).keys).to include(&#39;id&#39;, &#39;expires_at&#39;, &#39;status&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">                                                        :parking, :device, :zone,</code>
+          <code class="ruby">                                                        &#39;parking_units&#39;, &#39;device&#39;, &#39;zone&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby">                                                        :car, :created_at, :updated_at )</code>
+          <code class="ruby">                                                        &#39;created_at&#39;, &#39;updated_at&#39;,&#39;payments&#39;,&#39;car&#39; )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
@@ -7251,8 +7631,8 @@
     <h3>spec/helpers/devices_helper_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -7338,13 +7718,7 @@
           <code class="ruby">RSpec.describe DevicesHelper, type: :helper do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  pending &quot;add some examples to (or delete) #{__FILE__}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
@@ -7461,8 +7835,8 @@
     <h3>spec/helpers/payments_helper_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -7548,13 +7922,7 @@
           <code class="ruby">RSpec.describe PaymentsHelper, type: :helper do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  pending &quot;add some examples to (or delete) #{__FILE__}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
