@@ -13,8 +13,9 @@
 #  updated_at    :datetime         not null
 #
 
+# Parking controller
 class ParkingSerializer < ActiveModel::Serializer
-  attributes :id, :expires_at, :status, :parking_units, :device, :zone ,
+  attributes :id, :expires_at, :status, :parking_units, :device, :zone,
              :created_at, :updated_at, :zone, :payments, :car
   def device
     object.device

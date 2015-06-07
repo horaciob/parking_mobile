@@ -65,13 +65,13 @@ RSpec.describe ParkingsController, type: :controller do
   end
 
   describe '#show' do
-    let(:parking) {FactoryGirl.create(:parking)}
+    let(:parking) { FactoryGirl.create(:parking) }
 
     it 'show a parking' do
       get :show, id: parking.id
       expect(JSON.parse(response.body).keys).to include('id', 'expires_at', 'status',
                                                         'parking_units', 'device', 'zone',
-                                                        'created_at', 'updated_at','payments','car' )
+                                                        'created_at', 'updated_at', 'payments', 'car')
     end
 
     it 'returns 404 if parking does not exist' do

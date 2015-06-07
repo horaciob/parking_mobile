@@ -17,4 +17,3 @@
 class PaymentSerializer < ActiveModel::Serializer
   attributes :id, :payment_method, :data, :parking_id, :device_id, :status, :price, :created_at, :updated_at
 end
-
