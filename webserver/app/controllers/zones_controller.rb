@@ -1,8 +1,8 @@
 # Zone handler
 class ZonesController < ApplicationController
   def index
-    @zone = Zone.all
-    render json: @zone.to_json
+    @zones = Zone.filter(params.slice(:by_number, :by_name))
+    render json: @zones.to_json
   end
 
   def create

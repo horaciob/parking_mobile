@@ -11,9 +11,13 @@
 #  updated_at :datetime         not null
 #
 class Zone < ActiveRecord::Base
+  include Filterable
   has_many :parkings
   has_many :payments
   before_validation :set_defaults
+
+  scope :by_number, -> (number) { where('number = ?', number) }
+  scope :by_name, -> (name) { where('name = ?', name) }
   validates :name, presence: true
   validates :number, presence: true
 
