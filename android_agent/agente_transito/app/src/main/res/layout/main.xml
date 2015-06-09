@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Http GET Demo"/>
+        android:text="Parking Mobile Demo UDA"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,6 +48,15 @@
         android:textSize="12sp" >
     </TextView>
 
+    <EditText
+        android:layout_margin="20dip"
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:minLines="15"
+        android:maxLines="15"
+        android:textSize="12sp"
+        android:editable="false"
+        android:id="@+id/my_edit" />
     <GridView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/search_grid"
         android:layout_width="match_parent"
@@ -58,4 +67,6 @@
         android:horizontalSpacing="1dp"
         android:stretchMode="columnWidth"
         android:gravity="center" />
+
+
 </LinearLayout>

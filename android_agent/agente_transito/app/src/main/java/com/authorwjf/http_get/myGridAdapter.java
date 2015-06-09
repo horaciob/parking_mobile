@@ -43,7 +43,6 @@ public class myGridAdapter extends BaseAdapter {
             // set value into textview
             TextView textView = (TextView) gridView
                     .findViewById(R.id.grid_item_label);
-            textView.setText("ssss");
 
         } else {
             gridView = (LinearLayout) convertView;

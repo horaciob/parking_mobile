@@ -103,6 +103,8 @@ public class Main extends Activity implements OnClickListener {
             return text;
         }
         protected void onPostExecute(String results) {
+            EditText et = (EditText) findViewById(R.id.my_edit);
+            et.setText("");
             List<String> data = new ArrayList<String>();
             GridView gridview = (GridView) findViewById(R.id.search_grid);
 
@@ -114,6 +116,7 @@ public class Main extends Activity implements OnClickListener {
                 e.printStackTrace();
             }
             if (results!=null) {
+                et.setText(results.toString());
                 try {
                   jsonarray = new JSONArray(results);
                 } catch (JSONException e) {
@@ -128,6 +131,12 @@ public class Main extends Activity implements OnClickListener {
                         data.add(parking.getString("expires_at"));
                         data.add(parking.getString("status"));
                         //et.setText(et.getText().toString().concat(parking.getString("status")));
+                        String[] simpleArray = new String[ data.size() ];
+                        String[] stringArray = data.toArray(new String[data.size()]);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(Main.activity,
+                                android.R.layout.simple_list_item_1, stringArray);
+
+                        gridview.setAdapter(adapter);
                     } catch (JSONException e) {
                         //et.setText(e.getMessage().toString());
                         e.printStackTrace();
@@ -135,14 +144,9 @@ public class Main extends Activity implements OnClickListener {
 
                 }
             }
-
-            String[] simpleArray = new String[ data.size() ];
-            String[] stringArray = data.toArray(new String[data.size()]);
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(Main.activity,
-                    android.R.layout.simple_list_item_1, stringArray);
-
-            gridview.setAdapter(adapter);
-
+            else{
+                et.setText("No se encontró información con dichos requerimientos");
+            }
 
             Button b = (Button)findViewById(R.id.my_button);
             b.setClickable(true);
