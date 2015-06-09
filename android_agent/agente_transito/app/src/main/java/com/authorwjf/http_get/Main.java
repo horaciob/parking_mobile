@@ -1,6 +1,9 @@
 package com.authorwjf.http_get;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -13,8 +16,11 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,8 +28,10 @@ import org.json.JSONObject;
 public class Main extends Activity implements OnClickListener {
     private EditText license_plate, zone_name, zone_number;
     private Button search;
+    public static Activity activity;
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        activity = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         findViewById(R.id.my_button).setOnClickListener(this);
@@ -95,8 +103,9 @@ public class Main extends Activity implements OnClickListener {
             return text;
         }
         protected void onPostExecute(String results) {
-            EditText et = (EditText)findViewById(R.id.my_edit);
-            et.setText("");
+            List<String> data = new ArrayList<String>();
+            GridView gridview = (GridView) findViewById(R.id.search_grid);
+
             JSONArray jsonarray = null;
             String val = new String("");
             try {
@@ -115,7 +124,9 @@ public class Main extends Activity implements OnClickListener {
                     try {
                         JSONObject parking = jsonarray.getJSONObject(i);
                         JSONObject car = new JSONObject(parking.getString("car"));
-                        val = val.concat(car.getString("license_plate").concat("  ").concat(parking.getString("expires_at").concat(" ").concat(parking.getString("status")).concat("\n")));
+                        data.add(car.getString("license_plate"));
+                        data.add(parking.getString("expires_at"));
+                        data.add(parking.getString("status"));
                         //et.setText(et.getText().toString().concat(parking.getString("status")));
                     } catch (JSONException e) {
                         //et.setText(e.getMessage().toString());
@@ -124,7 +135,15 @@ public class Main extends Activity implements OnClickListener {
 
                 }
             }
-            et.setText(val);
+
+            String[] simpleArray = new String[ data.size() ];
+            String[] stringArray = data.toArray(new String[data.size()]);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(Main.activity,
+                    android.R.layout.simple_list_item_1, stringArray);
+
+            gridview.setAdapter(adapter);
+
+
             Button b = (Button)findViewById(R.id.my_button);
             b.setClickable(true);
         }
