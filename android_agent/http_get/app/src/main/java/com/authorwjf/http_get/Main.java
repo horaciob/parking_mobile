@@ -56,7 +56,7 @@ public class Main extends Activity implements OnClickListener {
 
             values = zone_name.getText().toString();
             if (!values.matches("")) {
-               params_uri="by_name=".concat(values);
+               params_uri="zone_name=".concat(values);
             }
 
             values = zone_number.getText().toString();
@@ -64,7 +64,7 @@ public class Main extends Activity implements OnClickListener {
                 if (params_uri.length()>1){
                     params_uri=params_uri.concat("&");
                 }
-                params_uri=params_uri.concat("by_number=".concat(values));
+                params_uri=params_uri.concat("zone_number=".concat(values));
             }
 
             values = license_plate.getText().toString();
