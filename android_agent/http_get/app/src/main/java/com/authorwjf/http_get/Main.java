@@ -15,6 +15,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Main extends Activity implements OnClickListener {
     private EditText license_plate, zone_name, zone_number;
     private Button search;
@@ -91,10 +95,36 @@ public class Main extends Activity implements OnClickListener {
             return text;
         }
         protected void onPostExecute(String results) {
-            if (results!=null) {
-                EditText et = (EditText)findViewById(R.id.my_edit);
-                et.setText(results);
+            EditText et = (EditText)findViewById(R.id.my_edit);
+            et.setText("");
+            JSONArray jsonarray = null;
+            String val = new String("");
+            try {
+                jsonarray = new JSONArray("[]");
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
+            if (results!=null) {
+                try {
+                  jsonarray = new JSONArray(results);
+                } catch (JSONException e) {
+
+                    e.printStackTrace();
+                }
+                for(int i=0; i<jsonarray.length(); i++){
+                    try {
+                        JSONObject parking = jsonarray.getJSONObject(i);
+                        JSONObject car = new JSONObject(parking.getString("car"));
+                        val = val.concat(car.getString("license_plate").concat("  ").concat(parking.getString("expires_at").concat(" ").concat(parking.getString("status")).concat("\n")));
+                        //et.setText(et.getText().toString().concat(parking.getString("status")));
+                    } catch (JSONException e) {
+                        //et.setText(e.getMessage().toString());
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+            et.setText(val);
             Button b = (Button)findViewById(R.id.my_button);
             b.setClickable(true);
         }
