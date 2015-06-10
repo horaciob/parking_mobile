@@ -1,8 +1,12 @@
 package com.authorwjf.http_get;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -14,6 +18,7 @@ import org.apache.http.protocol.HttpContext;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -102,6 +107,7 @@ public class Main extends Activity implements OnClickListener {
             }
             return text;
         }
+
         protected void onPostExecute(String results) {
             EditText et = (EditText) findViewById(R.id.my_edit);
             et.setText("");
@@ -128,13 +134,12 @@ public class Main extends Activity implements OnClickListener {
                         JSONObject parking = jsonarray.getJSONObject(i);
                         JSONObject car = new JSONObject(parking.getString("car"));
                         data.add(car.getString("license_plate"));
-                        data.add(parking.getString("expires_at"));
                         data.add(parking.getString("status"));
-                        //et.setText(et.getText().toString().concat(parking.getString("status")));
+                        data.add(parking.getString("formated_expires_at"));
                         String[] simpleArray = new String[ data.size() ];
                         String[] stringArray = data.toArray(new String[data.size()]);
                         ArrayAdapter<String> adapter = new ArrayAdapter<String>(Main.activity,
-                                android.R.layout.simple_list_item_1, stringArray);
+                                       android.R.layout.simple_list_item_1, stringArray);
 
                         gridview.setAdapter(adapter);
                     } catch (JSONException e) {

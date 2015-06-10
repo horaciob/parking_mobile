@@ -15,8 +15,12 @@
 
 # Parking controller
 class ParkingSerializer < ActiveModel::Serializer
-  attributes :id, :expires_at, :status, :parking_units, :device, :zone,
+  attributes :id, :expires_at, :formated_expires_at, :status, :parking_units, :device, :zone,
              :created_at, :updated_at, :zone, :payments, :car
+  def formated_expires_at
+    expires_at.strftime("%d/%m %H:%M")
+  end
+
   def device
     object.device
   end
