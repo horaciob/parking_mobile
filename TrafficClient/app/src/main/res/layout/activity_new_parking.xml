@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.hbranciforte.trafficclient.NewParking">
+
+    <TextView
+        android:text="Ingreso de localización"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtLocalizacion"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    />
+    <EditText
+        android:layout_below="@+id/txtLocalizacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nombre de zona"
+        android:id="@+id/zone_name"
+        android:singleLine="true"
+        android:maxLength="40"
+        />
+    <EditText
+        android:layout_below="@+id/txtLocalizacion"
+        android:layout_toRightOf="@+id/zone_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nro de zona"
+        android:id="@+id/zone_number"
+        android:singleLine="true"
+        android:inputType="number"
+        android:maxLength="6"
+        />
+    <Button
+        android:id="@+id/confirmZone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        android:layout_below="@+id/zone_name"
+        android:onClick="lunchDataSection"
+        />
+</RelativeLayout>
