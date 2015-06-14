@@ -63,6 +63,10 @@ RSpec.describe ZonesController, type: :controller do
 
   describe '#show' do
     let(:zone) { FactoryGirl.create(:zone) }
+    it 'returns zone if its called by name_number' do 
+      get :show, id:"#{zone.name}-#{zone.number}" 
+      expect(JSON.parse(response.body)["name"]).to eq(zone.name)
+    end
 
     it 'returns 404 if doesnt exist' do
       get :show, id: 999

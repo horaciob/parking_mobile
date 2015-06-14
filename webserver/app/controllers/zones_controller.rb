@@ -24,7 +24,13 @@ class ZonesController < ApplicationController
   end
 
   def show
-    zone = Zone.find(params[:id])
+    zone = nil
+    if params[:id].to_i != 0
+      zone = Zone.find(params[:id])
+    else
+      name,number = params[:id].split("-")
+      zone = Zone.custom_find(name,number)
+    end
     render json: zone, status: 200
   end
 
