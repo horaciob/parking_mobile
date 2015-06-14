@@ -17,7 +17,11 @@ class ParkingsController < ApplicationController
       parking_values = parking_creation_params
       parking_values[:zone] = zone
       parking = Parking.create(parking_values)
-      render json: parking.to_json, root: false
+      if parking.id.to_i != 0
+        render json: parking.to_json, root: false
+      else
+        render  json: { :errors => parking.errors.as_json , status: 420}
+      end
     else
       render json: { zone: 'Zone not found' }, status: 404
     end

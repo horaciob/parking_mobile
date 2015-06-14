@@ -25,6 +25,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.Spinner;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,6 +33,7 @@ import org.json.JSONObject;
 
 public class Main extends Activity implements OnClickListener {
     private EditText license_plate, zone_name, zone_number;
+    private Spinner parking_status;
     private Button search;
     public static Activity activity;
     @Override
@@ -46,6 +48,7 @@ public class Main extends Activity implements OnClickListener {
         license_plate = (EditText) findViewById(R.id.license_plate);
         zone_name = (EditText)findViewById(R.id.zone_name);
         zone_number = (EditText)findViewById(R.id.zone_number);
+        parking_status =(Spinner) findViewById(R.id.parking_status);
 
         Button b = (Button)findViewById(R.id.my_button);
         b.setClickable(false);
@@ -91,6 +94,15 @@ public class Main extends Activity implements OnClickListener {
                 }
                 params_uri=params_uri.concat("license_plate=".concat(values));
             }
+
+            values = parking_status.getSelectedItem().toString();
+            if (!values.matches("")) {
+                if (params_uri.length()>1){
+                    params_uri=params_uri.concat("&");
+                }
+                params_uri=params_uri.concat("status=".concat(values));
+            }
+
 
             if (params_uri.length()>1){
                 query_url= query_url.concat("?");

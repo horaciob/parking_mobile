@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/controllers/devices_controller_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/controllers/devices_controller_spec.rb": [
         1,
         null,
         1,
@@ -75,7 +75,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/rails_helper.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -128,7 +128,7 @@
         1,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/environment.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/environment.rb": [
         null,
         1,
         null,
@@ -137,7 +137,7 @@
         null,
         1
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/application.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/application.rb": [
         1,
         null,
         1,
@@ -165,12 +165,12 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/boot.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/environments/test.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/environments/test.rb": [
         1,
         null,
         null,
@@ -214,7 +214,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/initializers/assets.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -227,7 +227,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/initializers/backtrace_silencers.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -236,51 +236,51 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/initializers/config.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/initializers/config.rb": [
         1,
         1
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/initializers/cookies_serializer.rb": [
-        null,
-        null,
-        1
-      ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/initializers/filter_parameter_logging.rb": [
-        null,
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/initializers/inflections.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/initializers/filter_parameter_logging.rb": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/initializers/mime_types.rb": [
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/initializers/wrap_parameters.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/initializers/inflections.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/initializers/mime_types.rb": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/initializers/session_store.rb": [
+        null,
+        null,
+        1
+      ],
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -296,7 +296,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/factories/cars.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/factories/cars.rb": [
         null,
         null,
         null,
@@ -322,7 +322,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/models/car.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/models/car.rb": [
         null,
         null,
         null,
@@ -344,7 +344,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/factories/devices.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/factories/devices.rb": [
         null,
         null,
         null,
@@ -370,7 +370,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/models/device.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/models/device.rb": [
         null,
         null,
         null,
@@ -392,7 +392,7 @@
         2,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/models/concerns/filterable.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/models/concerns/filterable.rb": [
         null,
         null,
         1,
@@ -401,16 +401,16 @@
         null,
         1,
         1,
-        12,
-        12,
+        13,
+        13,
         8,
         null,
-        12,
+        13,
         null,
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/factories/parkings.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/factories/parkings.rb": [
         null,
         null,
         null,
@@ -446,7 +446,7 @@
         null,
         null,
         1,
-        42,
+        43,
         null,
         null,
         1,
@@ -461,7 +461,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/factories/payments.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/factories/payments.rb": [
         null,
         null,
         null,
@@ -516,7 +516,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/models/payment.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/models/payment.rb": [
         null,
         null,
         null,
@@ -545,7 +545,7 @@
         2,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/factories/zones.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/factories/zones.rb": [
         null,
         null,
         null,
@@ -582,7 +582,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/models/zone.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/models/zone.rb": [
         null,
         null,
         null,
@@ -600,11 +600,15 @@
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        1,
         1,
         null,
         1,
-        73,
-        73,
+        74,
+        74,
         null,
         null,
         1,
@@ -612,7 +616,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/config/routes.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/config/routes.rb": [
         1,
         1,
         1,
@@ -620,32 +624,32 @@
         1,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/helpers/application_helper.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/helpers/application_helper.rb": [
         null,
         1,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/helpers/devices_helper.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/helpers/devices_helper.rb": [
         null,
         1,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/helpers/parkings_helper.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/helpers/parkings_helper.rb": [
         null,
         1,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/helpers/payments_helper.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/helpers/payments_helper.rb": [
         null,
         1,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/helpers/zones_helper.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/helpers/zones_helper.rb": [
         null,
         1,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/controllers/devices_controller.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/controllers/devices_controller.rb": [
         null,
         1,
         1,
@@ -680,7 +684,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/controllers/application_controller.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/controllers/application_controller.rb": [
         null,
         1,
         null,
@@ -701,7 +705,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/controllers/parkings_controller_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/controllers/parkings_controller_spec.rb": [
         1,
         null,
         1,
@@ -790,7 +794,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/controllers/parkings_controller.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/controllers/parkings_controller.rb": [
         null,
         1,
         1,
@@ -811,6 +815,10 @@
         1,
         1,
         1,
+        1,
+        null,
+        0,
+        null,
         null,
         1,
         null,
@@ -839,7 +847,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/controllers/payments_controller_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/controllers/payments_controller_spec.rb": [
         1,
         null,
         1,
@@ -911,7 +919,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/controllers/payments_controller.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/controllers/payments_controller.rb": [
         null,
         1,
         1,
@@ -926,7 +934,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/controllers/zones_controller_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/controllers/zones_controller_spec.rb": [
         1,
         null,
         1,
@@ -1010,7 +1018,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/controllers/zones_controller.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/controllers/zones_controller.rb": [
         null,
         1,
         1,
@@ -1048,7 +1056,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/helpers/devices_helper_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/helpers/devices_helper_spec.rb": [
         1,
         null,
         null,
@@ -1064,7 +1072,7 @@
         1,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/helpers/parkings_helper_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/helpers/parkings_helper_spec.rb": [
         1,
         null,
         null,
@@ -1080,7 +1088,7 @@
         1,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/helpers/payments_helper_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/helpers/payments_helper_spec.rb": [
         1,
         null,
         null,
@@ -1096,7 +1104,7 @@
         1,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/helpers/zones_helper_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/helpers/zones_helper_spec.rb": [
         1,
         null,
         null,
@@ -1112,7 +1120,7 @@
         1,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/models/car_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/models/car_spec.rb": [
         null,
         null,
         null,
@@ -1156,7 +1164,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/models/device_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/models/device_spec.rb": [
         null,
         null,
         null,
@@ -1204,7 +1212,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/models/parking_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/models/parking_spec.rb": [
         null,
         null,
         null,
@@ -1324,7 +1332,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/models/parking.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/models/parking.rb": [
         null,
         null,
         null,
@@ -1363,8 +1371,8 @@
         1,
         null,
         1,
-        48,
-        48,
+        49,
+        49,
         null,
         null,
         1,
@@ -1382,7 +1390,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/models/payment_spec.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/models/payment_spec.rb": [
         null,
         null,
         null,
@@ -1401,18 +1409,9 @@
         1,
         null,
         1,
-        null
-      ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/spec/models/zone_spec.rb": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
         null,
         null,
         null,
@@ -1425,26 +1424,52 @@
         1,
         1,
         1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
         null,
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/serializers/parking_serializer.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/spec/models/zone_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/serializers/parking_serializer.rb": [
         null,
         null,
         null,
@@ -1463,6 +1488,10 @@
         null,
         1,
         1,
+        null,
+        1,
+        8,
+        null,
         null,
         1,
         8,
@@ -1481,7 +1510,7 @@
         null,
         null
       ],
-      "/Users/hbranciforte/horacio/parking_mobile/webserver/app/serializers/payment_serializer.rb": [
+      "/home/hbranciforte/horacio/parking_mobile/webserver/app/serializers/payment_serializer.rb": [
         null,
         null,
         null,
@@ -1503,6 +1532,6 @@
         null
       ]
     },
-    "timestamp": 1433719601
+    "timestamp": 1434209152
   }
 }

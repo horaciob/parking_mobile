@@ -16,4 +16,21 @@
 require 'rails_helper'
 
 RSpec.describe Payment, type: :model do
+
+  describe '#create' do 
+    let(:params) do
+      {
+        payment_method: 'test',
+        data: '{"key", "value"}',
+        price: 100
+      }
+    end
+    it 'Call to payment_methods class when is created'
+    it 'Creates a new payment' do 
+      parking = FactoryGirl.create(:parking)
+      @p = Payment.new(params)
+      @p.parking = parking
+      expect(@p.save).to eq(true)
+    end
+  end
 end

@@ -7,6 +7,7 @@ MethodLength:
 AllCops:
   RunRailsCops: true
   Exclude:
+    - 'vendor/**/*'
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
