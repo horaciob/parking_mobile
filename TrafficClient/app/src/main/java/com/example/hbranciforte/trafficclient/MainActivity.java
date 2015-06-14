@@ -7,6 +7,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import java.io.IOException;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -38,7 +45,7 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void lunchNewParking(View view) {
+    public void lunchNewParking(View view) throws IOException {
         Intent intent = new Intent(this, NewParking.class);
         startActivity(intent);
     }

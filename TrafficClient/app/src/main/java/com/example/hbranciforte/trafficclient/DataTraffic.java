@@ -1,6 +1,7 @@
 package com.example.hbranciforte.trafficclient;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -43,4 +44,7 @@ public class DataTraffic extends ActionBarActivity {
         Intent intent = new Intent(this, Resume.class);
         startActivity(intent);
     }
+
+
+
 }

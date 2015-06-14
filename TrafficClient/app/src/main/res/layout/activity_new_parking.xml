@@ -34,11 +34,30 @@
         android:maxLength="6"
         />
     <Button
-        android:id="@+id/confirmZone"
+        android:id="@+id/searchZone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:layout_below="@+id/zone_name"
+        android:onClick="searchZone"
+        />
+
+    <TextView
+        android:layout_below="@+id/searchZone"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtResult"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    />
+    <Button
+        android:layout_below="@+id/txtResult"
+        android:id="@+id/next"
+        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Siguiente"
-        android:layout_below="@+id/zone_name"
         android:onClick="lunchDataSection"
         />
+
 </RelativeLayout>
