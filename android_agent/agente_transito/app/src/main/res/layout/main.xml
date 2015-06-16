@@ -108,6 +108,7 @@
         android:maxLines="15"
         android:textSize="12sp"
         android:editable="false"
+        android:visibility="invisible"
         android:layout_marginLeft="5dip"
         android:layout_marginRight="5dip"
         android:layout_alignTop="@+id/grid_item_label"

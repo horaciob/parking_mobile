@@ -35,7 +35,7 @@
         />
     <TextView
         android:layout_below="@+id/license_letters"
-        android:text="Valor de la tarifa"
+        android:text="\nCantidad de fichas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtTarifa"
@@ -53,17 +53,26 @@
     <TextView
         android:layout_below="@+id/txtTarifa"
         android:layout_toRightOf="@+id/fichas"
-        android:text="xx pesos"
+        android:text="$ 20 "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/valor"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     <TextView
         android:layout_below="@+id/valor"
-        android:text="Método de pago"
+        android:paddingBottom="10px"
+        android:text="\nDatos del pago"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtPago"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:layout_below="@+id/valor"
+        android:text="Resumen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:id="@+id/txtResumen1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     <EditText
         android:layout_below="@+id/txtPago"
@@ -88,13 +97,12 @@
         />
     <TextView
         android:layout_below="@+id/payment_field1"
-        android:text="Resumen"
+        android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtResumen"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     <Button
-
         android:layout_below="@+id/txtResumen"
         android:id="@+id/confirmData"
         android:layout_width="wrap_content"
