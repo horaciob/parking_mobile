@@ -42,7 +42,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
     <EditText
         android:layout_below="@+id/txtTarifa"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:hint="Cantidad de fichas"
         android:id="@+id/fichas"
@@ -53,11 +53,19 @@
     <TextView
         android:layout_below="@+id/txtTarifa"
         android:layout_toRightOf="@+id/fichas"
-        android:text="$ 20 "
+        android:text="$ 0.0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/valor"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        />
+    <TextView
+        android:layout_below="@+id/valor"
+        android:layout_toRightOf="@+id/fichas"
+        android:text="0.0 min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTime"
+        />
     <TextView
         android:layout_below="@+id/valor"
         android:paddingBottom="10px"

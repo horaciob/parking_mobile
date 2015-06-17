@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,8 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,12 +31,17 @@ import java.util.List;
 
 
 public class DataTraffic extends ActionBarActivity {
-
+    JSONObject zone_info=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_traffic);
+        try {
+            zone_info = new JSONObject((String) getIntent().getSerializableExtra("zone_info"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         EditText ed_fichas = (EditText) findViewById(R.id.fichas);
         ed_fichas.addTextChangedListener(new TextWatcher() {
             @Override
@@ -47,8 +55,28 @@ public class DataTraffic extends ActionBarActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
+                float price = (float) 0.0;
+                Integer time= 0;
                 TextView txtvalor = (TextView) findViewById(R.id.valor);
-                txtvalor.setText("aaa")
+                TextView txttiempo = (TextView) findViewById(R.id.txtTime);
+                if (s.toString() != "") {
+                  try {
+                      price = (float) zone_info.getDouble("unit_price") * Float.valueOf(s.toString());
+                      time =  zone_info.getInt("unit_time")*Integer.parseInt(s.toString());
+                  } catch (Exception e) {
+                      Log.e("getting data:",e.getMessage());
+                      txtvalor.setText("");
+                      txttiempo.setText("");
+                  }
+                  try {
+                      txtvalor.setText("$ ".concat(Float.toString(price)));
+                      txttiempo.setText(time.toString().concat(" min"));
+                  } catch (Exception e){
+                      Log.e("getting data:",e.getMessage());
+                      txtvalor.setText("");
+                      txttiempo.setText("");
+                    }
+                }
             }
         });
     }

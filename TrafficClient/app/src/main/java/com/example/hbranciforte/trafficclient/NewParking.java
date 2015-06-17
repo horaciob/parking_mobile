@@ -56,7 +56,7 @@ public class NewParking extends ActionBarActivity {
 
     public void lunchDataSection(View view) throws IOException, InterruptedException {
         Intent intent = new Intent(this, DataTraffic.class);
-        intent.putExtra( "value",json.toString() );
+        intent.putExtra( "zone_info",json.toString() );
         startActivity(intent);
     }
 
