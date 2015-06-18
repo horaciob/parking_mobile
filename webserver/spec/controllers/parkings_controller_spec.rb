@@ -16,7 +16,7 @@ RSpec.describe ParkingsController, type: :controller do
         license_plate: 'AAA123'
       },
       payment: {
-        type: 'dymmy_payment_method',
+        payment_method: 'test_method',
         data: '{"data","value"}'
       }
     }

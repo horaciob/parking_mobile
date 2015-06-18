@@ -29,7 +29,7 @@ RSpec.describe Parking, type: :model do
           license_plate: 'AAA123'
         },
         payments_attributes: [{
-          payment_method: 'dummy_method',
+          payment_method: 'test_method',
           data: '{"data":"values"}'
         }]
       }
@@ -113,6 +113,22 @@ RSpec.describe Parking, type: :model do
     it 'expires? respond false if not expired' do
       parking = FactoryGirl.create(:parking)
       expect(parking.expired?).to eq(false)
+    end
+  end
+  describe '#payments' do
+    it 'call test method class when it is created' do
+      parking = FactoryGirl.build(:parking)
+      payment=double("payment")
+      TestMethod.stub(:new).and_return(payment)
+      payment.stub(execute).and_return(true)
+      parking.save
+      expect(parking.payment.status).to eq('approved')
+    end
+
+    it 'call test method class when it is created' do
+      parking = FactoryGirl.build(:parking)
+      parking.save
+      expect(parking.status).to eq('approved')
     end
   end
 end

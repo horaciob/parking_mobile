@@ -17,19 +17,19 @@ FactoryGirl.define do
   factory :payment do
     data '{"data1":"value1"}'
     price 30
-    payment_method 'test'
+    payment_method 'test_method'
   end
 
   factory :payment1, class: Payment do
     data '{"data1":"value1"}'
     price 30
-    payment_method 'test'
+    payment_method 'test_method'
     status 'accepted'
     created_at Time.now
     updated_at Time.now
 
     trait :credit_card do
-      payment_method 'credit_card'
+      payment_method 'test_method'
     end
 
     trait :low_price do

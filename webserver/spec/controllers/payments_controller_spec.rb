@@ -16,12 +16,6 @@ RSpec.describe PaymentsController, type: :controller do
       expect(response).to have_http_status(200)
     end
 
-    it 'filter by payment_method' do
-      3.times { FactoryGirl.create(:payment1, :credit_card) }
-      get :index, payment_method: 'credit_card'
-      expect(JSON.parse(response.body).size).to eq 3
-    end
-
     it 'filter by price' do
       3.times { FactoryGirl.create(:payment1, :low_price) }
       get :index, price: 1

@@ -16,7 +16,7 @@
 ## Estacionamiento medido
 class Parking < ActiveRecord::Base
   include Filterable
-  has_many :payments
+  has_many :payments, after_add: :execute_payment
   belongs_to :device
   belongs_to :zone
   belongs_to :car
@@ -52,5 +52,16 @@ class Parking < ActiveRecord::Base
 
   def need_to_be_expired?
     !expired? && Time.zone.now > expires_at
+  end
+
+  def execute_payment(obj)
+
+    payment = obj['payment_method'].camelize.constantize.new
+    if payment.execute
+      self.update_attribute(status: 'allowed')
+    else
+      @status='rejected'
+    end
+    true
   end
 end
