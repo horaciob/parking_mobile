@@ -20,6 +20,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -46,7 +47,7 @@ public class DataTraffic extends ActionBarActivity {
         ed_fichas.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                           }
+            }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -56,25 +57,25 @@ public class DataTraffic extends ActionBarActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 float price = (float) 0.0;
-                Integer time= 0;
+                Integer time = 0;
                 TextView txtvalor = (TextView) findViewById(R.id.valor);
                 TextView txttiempo = (TextView) findViewById(R.id.txtTime);
                 if (s.toString() != "") {
-                  try {
-                      price = (float) zone_info.getDouble("unit_price") * Float.valueOf(s.toString());
-                      time =  zone_info.getInt("unit_time")*Integer.parseInt(s.toString());
-                  } catch (Exception e) {
-                      Log.e("getting data:",e.getMessage());
-                      txtvalor.setText("");
-                      txttiempo.setText("");
-                  }
-                  try {
-                      txtvalor.setText("$ ".concat(Float.toString(price)));
-                      txttiempo.setText(time.toString().concat(" min"));
-                  } catch (Exception e){
-                      Log.e("getting data:",e.getMessage());
-                      txtvalor.setText("");
-                      txttiempo.setText("");
+                    try {
+                        price = (float) zone_info.getDouble("unit_price") * Float.valueOf(s.toString());
+                        time = zone_info.getInt("unit_time") * Integer.parseInt(s.toString());
+                    } catch (Exception e) {
+                        Log.e("getting data:", e.getMessage());
+                        txtvalor.setText("");
+                        txttiempo.setText("");
+                    }
+                    try {
+                        txtvalor.setText("$ ".concat(Float.toString(price)));
+                        txttiempo.setText(time.toString().concat(" min"));
+                    } catch (Exception e) {
+                        Log.e("getting data:", e.getMessage());
+                        txtvalor.setText("");
+                        txttiempo.setText("");
                     }
                 }
             }
@@ -103,64 +104,49 @@ public class DataTraffic extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void lunchResume(View view) {
-        new MyAsyncTask().execute("aa");
-        Intent intent = new Intent(this, Resume.class);
-        startActivity(intent);
-    }
-    public void postData(String valueIWantToSend) {
-        HttpClient httpclient = new DefaultHttpClient();
-        // specify the URL you want to post to
-        HttpPost httppost = new HttpPost("http://10.0.2.2:3000/parking");
-        try {
-            // create a list to store HTTP variables and their values
-            List nameValuePairs = new ArrayList();
-            // add an HTTP variable and value pair
-            nameValuePairs.add(new BasicNameValuePair("myHttpData", "value"));
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-            // send the variable and value, in other words post, to the URL
-            HttpResponse response = httpclient.execute(httppost);
-        } catch (ClientProtocolException e) {
-            e.getStackTrace();
-        } catch (IOException e) {
-            e.getStackTrace();
+    public void lunchResume(View view) throws JSONException, IOException {
+        JSONObject zone = new JSONObject();
+        JSONObject device = new JSONObject();
+        JSONObject car = new JSONObject();
+        JSONObject payment = new JSONObject();
+        JSONObject parking = new JSONObject();
+
+        device.put("notification_token","test_token");
+        device.put("user_agent","test_agent");
+
+        EditText licenseLetters = (EditText)findViewById(R.id.license_letters);
+        EditText licenseNumbers = (EditText)findViewById(R.id.license_numbers);
+        car.put("license_plate",licenseLetters.getText().toString().toUpperCase().concat(licenseNumbers.getText().toString()));
+
+        EditText paymentField1 = (EditText)findViewById(R.id.payment_field1);
+        EditText licenseSec = (EditText)findViewById(R.id.payment_security);
+        payment.put("type","test_method");
+        payment.put("data","{\"data\",\"".concat(paymentField1.getText().toString()).concat("\",\"security\":\"").concat(licenseSec.getText().toString().concat("\"}")));
+
+        zone.put("name",zone_info.get("name"));
+        zone.put("number",zone_info.get("number"));
+
+        EditText parkingCoins = (EditText)findViewById(R.id.fichas);
+        parking.put("parking_units", Integer.valueOf(parkingCoins.getText().toString()));
+        parking.put("zone", zone);
+        parking.put("device",device);
+        parking.put("car",car);
+        parking.put("payment",payment);
+
+        DefaultHttpClient httpclient = new DefaultHttpClient();
+        HttpPost httppostreq = new HttpPost("http://10.0.2.2:3000/parkings");
+        StringEntity se = new StringEntity(parking.toString());
+        httppostreq.setHeader("Content-type", "application/json");
+        httppostreq.setEntity(se);
+        HttpResponse httpresponse = httpclient.execute(httppostreq);
+        if(httpresponse.getStatusLine().getStatusCode()==200) {
+            Intent intent = new Intent(this, Resume.class);
+            intent.putExtra("response", httpresponse.toString());
+            intent.putExtra("data", parking.toString());
+            startActivity(intent);
         }
-    }
-    private class MyAsyncTask extends AsyncTask<String, Integer, Double>{
 
-        @Override
-        protected Double doInBackground(String... params) {
-            // TODO Auto-generated method stub
-            postData(params[0]);
-            return null;
-        }
-
-        protected void onPostExecute(Double result){
-            Toast.makeText(getApplicationContext(), "command sent", Toast.LENGTH_LONG).show();
-        }
-        protected void onProgressUpdate(Integer... progress){
-        }
-
-        public void postData(String valueIWantToSend) {
-            // Create a new HttpClient and Post Header
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://somewebsite.com/receiver.php");
-
-            try {
-                // Add your data
-                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-                nameValuePairs.add(new BasicNameValuePair("myHttpData", valueIWantToSend));
-                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-
-                // Execute HTTP Post Request
-                HttpResponse response = httpclient.execute(httppost);
-
-            } catch (ClientProtocolException e) {
-                // TODO Auto-generated catch block
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-            }
-        }
 
     }
+
 }
