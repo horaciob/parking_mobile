@@ -45,7 +45,7 @@ class ParkingsController < ApplicationController
       parking_units: params.require(:parking_units).to_i,
       device_attributes: params.require(:device).permit(:notification_token, :user_agent),
       car_attributes: params.require(:car).permit(:license_plate),
-      payments_attributes: [params.require(:payment).permit(:payment_method, :data)]
+      payments_attributes: [params.require(:payment).permit(:payment_method, :data,:price)]
     }
   end
 end

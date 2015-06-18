@@ -4,7 +4,7 @@
 #
 #  id            :integer          not null, primary key
 #  expires_at    :datetime
-#  status        :string(255)      default("pending")
+#  status        :string(255)      default("allowed")
 #  parking_units :integer
 #  device_id     :integer
 #  zone_id       :integer

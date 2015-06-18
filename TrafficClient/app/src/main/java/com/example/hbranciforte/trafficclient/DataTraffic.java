@@ -2,6 +2,7 @@ package com.example.hbranciforte.trafficclient;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -33,11 +34,15 @@ import java.util.List;
 
 public class DataTraffic extends ActionBarActivity {
     JSONObject zone_info=null;
-
+    float price=(float) 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_traffic);
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
         try {
             zone_info = new JSONObject((String) getIntent().getSerializableExtra("zone_info"));
         } catch (JSONException e) {
@@ -56,7 +61,7 @@ public class DataTraffic extends ActionBarActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                float price = (float) 0.0;
+                //float price = (float) 0.0;
                 Integer time = 0;
                 TextView txtvalor = (TextView) findViewById(R.id.valor);
                 TextView txttiempo = (TextView) findViewById(R.id.txtTime);
@@ -111,6 +116,7 @@ public class DataTraffic extends ActionBarActivity {
         JSONObject payment = new JSONObject();
         JSONObject parking = new JSONObject();
 
+
         device.put("notification_token","test_token");
         device.put("user_agent","test_agent");
 
@@ -120,9 +126,10 @@ public class DataTraffic extends ActionBarActivity {
 
         EditText paymentField1 = (EditText)findViewById(R.id.payment_field1);
         EditText licenseSec = (EditText)findViewById(R.id.payment_security);
+        TextView valor = (TextView) findViewById(R.id.valor);
         payment.put("type","test_method");
-        payment.put("data","{\"data\",\"".concat(paymentField1.getText().toString()).concat("\",\"security\":\"").concat(licenseSec.getText().toString().concat("\"}")));
-
+        payment.put("data","{\"data\",\"".concat(paymentField1.getText().toString()).concat("\",\"security\":\"").concat(licenseSec.getText().toString().concat("\",\"price\":").concat(Float.toString(price)).concat("}")));
+        payment.put("price",price);
         zone.put("name",zone_info.get("name"));
         zone.put("number",zone_info.get("number"));
 

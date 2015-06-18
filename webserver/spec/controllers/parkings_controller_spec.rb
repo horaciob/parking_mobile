@@ -26,6 +26,7 @@ RSpec.describe ParkingsController, type: :controller do
     it 'Allow create a parking and his nested attributes' do
       FactoryGirl.create(:zone_catamarca)
       post :create, complete_params
+      puts complete_params.to_json
       expect(response).to have_http_status(:ok)
       expect(Car.count).to eq(1)
       expect(Device.count).to eq(1)

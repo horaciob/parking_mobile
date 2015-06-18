@@ -7,18 +7,33 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class Resume extends ActionBarActivity {
-
+    String response;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_resume);
+
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            response = extras.getString("response");
+        }
+
+        String value = extras.getString("data");
+        TextView txtData = (TextView)findViewById(R.id.txtData);
+        txtData.setText(value);
+        //txtData.setText(value.toString());
+
     }
 
     @Override
@@ -45,6 +60,7 @@ public class Resume extends ActionBarActivity {
 
     public void goHome(View view) {
         Intent intent = new Intent(this, MainActivity.class);
-        setIntent(intent);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }

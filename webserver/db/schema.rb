@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150524152839) do
 
   create_table "parkings", force: :cascade do |t|
     t.datetime "expires_at"
-    t.string   "status",        limit: 255, default: "pending"
+    t.string   "status",        limit: 255, default: "allowed"
     t.integer  "parking_units", limit: 4
     t.integer  "device_id",     limit: 4
     t.integer  "zone_id",       limit: 4

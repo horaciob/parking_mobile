@@ -108,7 +108,7 @@ public class NewParking extends ActionBarActivity {
             Button nextBtn = (Button) findViewById(R.id.next);
             String res= null;
             try {
-                res = "Precio por ficha: ".concat(json.getString("unit_price")).concat(" Pesos\nTiempo por ficha: ").concat(json.getString("unit_time").concat(" Minutos"));
+                res = "Precio por ficha: ".concat(json.getString("unit_price")).concat(" Pesos\nTiempo por ficha: ").concat(json.getString("unit_time").concat(" Min"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
