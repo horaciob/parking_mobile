@@ -109,11 +109,13 @@ public class NewParking extends ActionBarActivity {
             String res= null;
             try {
                 res = "Precio por ficha: ".concat(json.getString("unit_price")).concat(" Pesos\nTiempo por ficha: ").concat(json.getString("unit_time").concat(" Min"));
-            } catch (JSONException e) {
+                txtResponse.setText(res);
+                nextBtn.setVisibility(View.VISIBLE);
+            } catch (Exception e) {
                 e.printStackTrace();
+                txtResponse.setText("No se puedo encontrar datos para dicha zona");
             }
-            txtResponse.setText(res);
-            nextBtn.setVisibility(View.VISIBLE);
+
         }
     }
 }
