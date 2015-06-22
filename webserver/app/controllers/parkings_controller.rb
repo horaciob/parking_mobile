@@ -27,13 +27,21 @@ class ParkingsController < ApplicationController
     end
   end
 
+  def update
+     park = Parking.find(params[:id])
+     park.update_attributes(parking_update)
+     render json: park, root:false
+  end
+
   def show
     parking = Parking.find(params[:id])
     render json: parking, root: false, status: 200
   end
 
   private
-
+  def parking_update
+    params.permit(:status)
+  end
   def zone_find_params
     {
       zone: params.require(:zone).permit(:name, :number)

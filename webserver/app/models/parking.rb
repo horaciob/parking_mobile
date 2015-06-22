@@ -23,7 +23,7 @@ class Parking < ActiveRecord::Base
   accepts_nested_attributes_for :payments, :car, :device
 
   scope :status, -> (status) { where('status = ?', status) }
-  scope :expires, -> (init, finish) { where('expires_at > ? and expires_at < ?', init, finish) }
+  scope :expires, -> (date) { where('expires_at < ?',  DateTime.parse(date,"%Y%m%d%H%M")) }
   scope :license_plate, -> (license_plate) { joins(:car).where('license_plate = ?', license_plate) }
   scope :zone_name, -> (zone_name) { joins(:zone).where('name = ?', zone_name) }
   scope :zone_number, -> (zone_number) { joins(:zone).where('number = ?', zone_number) }
