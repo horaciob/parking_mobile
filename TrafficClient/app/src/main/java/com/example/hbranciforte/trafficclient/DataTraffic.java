@@ -6,6 +6,7 @@ import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
@@ -30,6 +31,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class DataTraffic extends ActionBarActivity {
@@ -110,50 +113,109 @@ public class DataTraffic extends ActionBarActivity {
     }
 
     public void lunchResume(View view) throws JSONException, IOException {
-        JSONObject zone = new JSONObject();
-        JSONObject device = new JSONObject();
-        JSONObject car = new JSONObject();
-        JSONObject payment = new JSONObject();
-        JSONObject parking = new JSONObject();
+        if (validate_form()) {
+            JSONObject payment = getPaymentInfo();
+            JSONObject zone = getZoneInfo();
+            JSONObject device = getDeviceinfo();
+            JSONObject car = getCarInfo();
+            JSONObject parking = new JSONObject();
 
+            EditText parkingCoins = (EditText) findViewById(R.id.fichas);
+            parking.put("parking_units", Integer.valueOf(parkingCoins.getText().toString()));
+            parking.put("zone", zone);
+            parking.put("device", device);
+            parking.put("car", car);
+            parking.put("payment", payment);
 
-        device.put("notification_token","test_token");
-        device.put("user_agent","test_agent");
-
-        EditText licenseLetters = (EditText)findViewById(R.id.license_letters);
-        EditText licenseNumbers = (EditText)findViewById(R.id.license_numbers);
-        car.put("license_plate",licenseLetters.getText().toString().toUpperCase().concat(licenseNumbers.getText().toString()));
-
-        EditText paymentField1 = (EditText)findViewById(R.id.payment_field1);
-        EditText licenseSec = (EditText)findViewById(R.id.payment_security);
-        TextView valor = (TextView) findViewById(R.id.valor);
-        payment.put("type","test_method");
-        payment.put("data","{\"data\",\"".concat(paymentField1.getText().toString()).concat("\",\"security\":\"").concat(licenseSec.getText().toString().concat("\",\"price\":").concat(Float.toString(price)).concat("}")));
-        payment.put("price",price);
-        zone.put("name",zone_info.get("name"));
-        zone.put("number",zone_info.get("number"));
-
-        EditText parkingCoins = (EditText)findViewById(R.id.fichas);
-        parking.put("parking_units", Integer.valueOf(parkingCoins.getText().toString()));
-        parking.put("zone", zone);
-        parking.put("device",device);
-        parking.put("car",car);
-        parking.put("payment",payment);
-
-        DefaultHttpClient httpclient = new DefaultHttpClient();
-        HttpPost httppostreq = new HttpPost("http://10.0.2.2:3000/parkings");
-        StringEntity se = new StringEntity(parking.toString());
-        httppostreq.setHeader("Content-type", "application/json");
-        httppostreq.setEntity(se);
-        HttpResponse httpresponse = httpclient.execute(httppostreq);
-        if(httpresponse.getStatusLine().getStatusCode()==200) {
-            Intent intent = new Intent(this, Resume.class);
-            intent.putExtra("response", httpresponse.toString());
-            intent.putExtra("data", parking.toString());
-            startActivity(intent);
+            DefaultHttpClient httpclient = new DefaultHttpClient();
+            HttpPost httppostreq = new HttpPost("http://10.0.2.2:3000/parkings");
+            StringEntity se = new StringEntity(parking.toString());
+            httppostreq.setHeader("Content-type", "application/json");
+            httppostreq.setEntity(se);
+            HttpResponse httpresponse = httpclient.execute(httppostreq);
+            if (httpresponse.getStatusLine().getStatusCode() == 200) {
+                Intent intent = new Intent(this, Resume.class);
+                intent.putExtra("response", httpresponse.toString());
+                intent.putExtra("data", parking.toString());
+                startActivity(intent);
+            }
         }
-
-
     }
 
+    private JSONObject getPaymentInfo() {
+        JSONObject payment = new JSONObject();
+        EditText paymentField1 = (EditText) findViewById(R.id.payment_field1);
+        EditText licenseSec = (EditText) findViewById(R.id.payment_security);
+        TextView valor = (TextView) findViewById(R.id.valor);
+        try {
+            payment.put("type", "test_method");
+            payment.put("data", "{\"data\",\"".concat(paymentField1.getText().toString()).concat("\",\"security\":\"").concat(licenseSec.getText().toString().concat("\",\"price\":").concat(Float.toString(price)).concat("}")));
+            payment.put("price", price);
+            return payment;
+        }catch (JSONException e){
+            Log.e("json error",e.getMessage());
+        }
+        return payment;
+    }
+
+    private JSONObject getZoneInfo(){
+        JSONObject zone = new JSONObject();
+        try {
+            zone.put("name", zone_info.get("name"));
+            zone.put("number", zone_info.get("number"));
+        }catch(JSONException e){
+            Log.e("JSON ERROR",e.getMessage());
+        }
+        return zone;
+    }
+
+    private JSONObject getDeviceinfo(){
+        JSONObject device =  new JSONObject();
+        try {
+            device.put("notification_token", "test_token");
+            device.put("user_agent", "test_agent");
+        }catch (JSONException e){
+            Log.e("Json error",e.getMessage() );
+        }
+        return device;
+    }
+    private JSONObject getCarInfo(){
+        JSONObject car = new JSONObject();
+        EditText licenseLetters = (EditText) findViewById(R.id.license_letters);
+        EditText licenseNumbers = (EditText) findViewById(R.id.license_numbers);
+        try {
+            car.put("license_plate", licenseLetters.getText().toString().toUpperCase().concat(licenseNumbers.getText().toString()));
+        } catch (JSONException e) {
+            Log.e("JSON error",e.getMessage());
+        }
+        return car;
+    }
+    private Boolean validate_form() {
+        EditText license_letter = (EditText) findViewById(R.id.license_letters);
+        EditText licenseNumbers = (EditText) findViewById(R.id.license_numbers);
+        EditText coins = (EditText) findViewById(R.id.fichas);
+        EditText payment1 = (EditText) findViewById(R.id.payment_field1);
+        EditText payment2 = (EditText) findViewById(R.id.payment_security);
+        boolean letterFlag, numberFlag, coinsFlag, payment1Flag, payment2Flag = true;
+
+        letterFlag = validateFormatOf( license_letter ,"\\w\\w\\w","Debe contener 3 letras");
+        numberFlag = validateFormatOf(licenseNumbers,"\\d\\d\\d","Debe contener 3 digitos");
+        coinsFlag = validateFormatOf(coins, "\\d+","Debe ingresar el número de fichas a abonar");
+        payment1Flag = validateFormatOf(payment1,"\\d+", "debe ingresar un valor de pago");
+        payment2Flag = validateFormatOf(payment2,"\\d+","debe ingresar un valor de seguridad");
+
+        return letterFlag && numberFlag && coinsFlag && payment1Flag && payment2Flag;
+    }
+
+    private boolean validateFormatOf(EditText etText, String regexp, String description ) {
+        Pattern mPattern = Pattern.compile(regexp);
+
+        Matcher matcher = mPattern.matcher(etText.getText().toString());
+        if(!matcher.find())
+        {
+            etText.setError(description);
+            return false;
+        }
+        return true;
+    }
 }

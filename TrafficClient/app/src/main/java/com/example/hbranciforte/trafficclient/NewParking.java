@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.apache.http.HttpResponse;
@@ -23,7 +25,6 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-
 
 public class NewParking extends ActionBarActivity {
     JSONObject json = null;
@@ -54,16 +55,35 @@ public class NewParking extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private boolean checkValue(EditText etText) {
+        String str = etText.getText().toString();
+
+        if(TextUtils.isEmpty(str)) {
+            etText.setError("Este dato debe ser completado");
+            return false;
+        }
+        return true;
+
+    }
+
     public void lunchDataSection(View view) throws IOException, InterruptedException {
+        EditText zone_name = (EditText) findViewById(R.id.zone_name);
+        EditText zone_number = (EditText) findViewById(R.id.zone_number);
         Intent intent = new Intent(this, DataTraffic.class);
-        intent.putExtra( "zone_info",json.toString() );
+        intent.putExtra("zone_info", json.toString());
         startActivity(intent);
+
     }
 
     public void searchZone(View view) {
-        TextView zone_name = (TextView) findViewById(R.id.zone_name);
-        TextView zone_number = (TextView) findViewById(R.id.zone_number);
-        new RequestTask().execute("http://10.0.2.2:3000/zones/".concat(zone_name.getText().toString()).concat("-").concat(zone_number.getText().toString()));
+        EditText zone_name = (EditText) findViewById(R.id.zone_name);
+        EditText zone_number = (EditText) findViewById(R.id.zone_number);
+        boolean flag1, flag2;
+        flag1 = checkValue(zone_name);
+        flag2 = checkValue(zone_number);
+        if (flag1 && flag2) {
+            new RequestTask().execute("http://10.0.2.2:3000/zones/".concat(zone_name.getText().toString()).concat("-").concat(zone_number.getText().toString()));
+        }
     }
 
     class RequestTask extends AsyncTask<String, String, String> {
@@ -98,7 +118,6 @@ public class NewParking extends ActionBarActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-
             try {
                 json = new JSONObject(result);
             } catch (JSONException e) {
@@ -115,10 +134,6 @@ public class NewParking extends ActionBarActivity {
                 e.printStackTrace();
                 txtResponse.setText("No se puedo encontrar datos para dicha zona");
             }
-
         }
     }
 }
-
-
-
