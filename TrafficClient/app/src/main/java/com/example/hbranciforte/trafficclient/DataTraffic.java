@@ -1,10 +1,12 @@
 package com.example.hbranciforte.trafficclient;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -172,8 +174,10 @@ public class DataTraffic extends ActionBarActivity {
     private JSONObject getDeviceinfo(){
         JSONObject device =  new JSONObject();
         try {
-            device.put("notification_token", "test_token");
-            device.put("user_agent", "test_agent");
+            TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+            String token = telephonyManager.getDeviceId().toString();
+            device.put("notification_token", token);
+            device.put("user_agent", System.getProperty("http.agent").toString() );
         }catch (JSONException e){
             Log.e("Json error",e.getMessage() );
         }
