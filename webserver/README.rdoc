@@ -13,20 +13,21 @@ cd parking_mobile/webserver/
 bundle install --path vendor/bundle
 
 vim config/database.yml #Set up your mysql or wathever database that you want to use
-rake db:create:all
 
-rake db:migrate
+bundle exec rake db:create:all
+
+bundle exec rake db:migrate
 
 ** if all was ok you will be able to run test :)
 
-rspec
+bundle exec rspec
 
-should run test and if all pass.
+** should run test and if all pass.
 
-puma -C config/puma.rb
+bundle exec puma -C config/puma.rb
 
 or
 
-rails s Puma
+bundle exec rails s Puma
 
 curl localhost:3000
