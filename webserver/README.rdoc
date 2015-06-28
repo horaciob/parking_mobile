@@ -6,28 +6,41 @@ tested on ruby 2.2.1p85
 Mysql
 
 === To install
-git clone git@github.com:horaciob/parking_mobile.git
 
-cd parking_mobile/webserver/
+1. Clone this repo
 
-bundle install --path vendor/bundle
+    git clone git@github.com:horaciob/parking_mobile.git
 
-vim config/database.yml #Set up your mysql or wathever database that you want to use
+2. Move to server folder
 
-bundle exec rake db:create:all
+    cd parking_mobile/webserver/
 
-bundle exec rake db:migrate
+2. Install ruby libraries localy
 
-** if all was ok you will be able to run test :)
+    bundle install --path vendor/bundle
 
-bundle exec rspec
+3. Edit your database info you should be able to set up mysql, pg or whatever database that active record support
 
-** should run test and if all pass.
+    vim config/database.yml
 
-bundle exec puma -C config/puma.rb
+4. Prepare your database
 
-or
+    bundle exec rake db:create:all
 
-bundle exec rails s Puma
+    bundle exec rake db:migrate
 
-curl localhost:3000
+5. Run TEST!!!! :)
+
+    bundle exec rspec
+
+6. Start webserver
+
+    bundle exec puma -C config/puma.rb
+
+    or
+
+    bundle exec rails s Puma
+
+7. Test your app
+
+    curl localhost:3000
