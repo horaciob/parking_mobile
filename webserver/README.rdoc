@@ -27,7 +27,7 @@ Mysql
 
     bundle exec rake db:create:all
 
-    bundle exec rake db:migrate
+    bundle exec rake db:migrate && bundle exec rake db:migrate RAILS_ENV=production && bundle exec rake db:migrate RAILS_ENV=test
 
 5. Run TEST!!!! :)
 
