@@ -18,7 +18,7 @@ class ParkingsController < ApplicationController
       parking_values[:zone] = zone
       parking = Parking.create(parking_values)
       if parking.id.to_i != 0
-        render json: parking.to_json, root: false
+        render json: parking, root: false
       else
         render  json: { :errors => parking.errors.as_json , status: 420}
       end
