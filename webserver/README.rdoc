@@ -20,5 +20,10 @@ rspec
 
 should run test and if all pass.
 
-rails s
+puma -C config/puma.rb
+
+or
+
+rails s Puma
+
 curl localhost:3000
