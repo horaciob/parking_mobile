@@ -71,7 +71,7 @@ public class Main extends Activity implements OnClickListener {
             HttpClient httpClient = new DefaultHttpClient();
             HttpContext localContext = new BasicHttpContext();
             String query_url,params_uri,values;
-            query_url = "http://10.0.2.2:3000/parkings";
+            query_url = "http://45.55.79.197/parkings";
             params_uri="";
 
             values = zone_name.getText().toString();
