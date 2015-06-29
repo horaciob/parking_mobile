@@ -82,7 +82,8 @@ public class NewParking extends ActionBarActivity {
         flag1 = checkValue(zone_name);
         flag2 = checkValue(zone_number);
         if (flag1 && flag2) {
-            new RequestTask().execute("http://10.0.2.2:3000/zones/".concat(zone_name.getText().toString()).concat("-").concat(zone_number.getText().toString()));
+            new RequestTask().execute("http://45.55.79.197/zones/".concat(zone_name.getText().toString()).concat("-").concat(zone_number.getText().toString()));
+            //new RequestTask().execute("http://10.0.2.2:3000/zones/".concat(zone_name.getText().toString()).concat("-").concat(zone_number.getText().toString()));
         }
     }
 
@@ -117,22 +118,31 @@ public class NewParking extends ActionBarActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-
-            try {
-                json = new JSONObject(result);
-            } catch (JSONException e) {
-                Log.e("Data: Getting error",e.getMessage());
-            }
             TextView txtResponse = (TextView) findViewById(R.id.txtResult);
             Button nextBtn = (Button) findViewById(R.id.next);
-            String res= null;
+
             try {
-                res = "Precio por ficha: ".concat(json.getString("unit_price")).concat(" Pesos\nTiempo por ficha: ").concat(json.getString("unit_time").concat(" Min"));
-                txtResponse.setText(res);
-                nextBtn.setVisibility(View.VISIBLE);
+                Log.e("valooooo!!!",result);
+                json = new JSONObject(result);
             } catch (Exception e) {
-                e.printStackTrace();
-                txtResponse.setText("No se puedo encontrar datos para dicha zona");
+                Log.e("Data: Getting error0", e.getMessage());
+                txtResponse.setText("No se puedo encontrar información para dicha zona");
+                txtResponse.setVisibility(View.VISIBLE);
+                nextBtn.setVisibility(View.INVISIBLE);
+                return;
+            }
+            if(json.has("errors")) {
+                txtResponse.setText("No se puedo encontrar información para dicha zona");
+                nextBtn.setVisibility(View.INVISIBLE);
+            }else{
+                String res = null;
+                try {
+                    res = "Precio por ficha: ".concat(json.getString("unit_price")).concat(" Pesos\nTiempo por ficha: ").concat(json.getString("unit_time").concat(" Min"));
+                    txtResponse.setText(res);
+                    nextBtn.setVisibility(View.VISIBLE);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

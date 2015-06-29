@@ -4,11 +4,16 @@ import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 
 public class Resume extends ActionBarActivity {
@@ -16,7 +21,7 @@ public class Resume extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        String value="";
         setContentView(R.layout.activity_resume);
 
         if (android.os.Build.VERSION.SDK_INT > 9) {
@@ -28,8 +33,25 @@ public class Resume extends ActionBarActivity {
         if (extras != null) {
             response = extras.getString("response");
         }
+        try {
+            JSONObject parseResponse = new JSONObject(extras.getString("response"));
+            if(parseResponse.getString("status").equals("allowed")) {
+                value = "Tiempo de finalizacion: ".concat(parseResponse.getString("formated_expires_at").toString());
+                TextView text = (TextView) findViewById(R.id.txtResumen);
+                text.setText("Aceptado!!");
+            }
+            else{
+                TextView text = (TextView) findViewById(R.id.txtResumen);
+                text.setText(parseResponse.getString("status").toString());
+            }
 
-        String value = extras.getString("data");
+
+        } catch (JSONException e) {
+            value = new String("error");
+            Log.e("PARSING JSON:",e.getMessage());
+        }
+
+
         TextView txtData = (TextView)findViewById(R.id.txtData);
         txtData.setText(value);
         //txtData.setText(value.toString());

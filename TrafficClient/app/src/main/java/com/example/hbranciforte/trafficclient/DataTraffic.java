@@ -25,6 +25,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -74,18 +75,13 @@ public class DataTraffic extends ActionBarActivity {
                     try {
                         price = (float) zone_info.getDouble("unit_price") * Float.valueOf(s.toString());
                         time = zone_info.getInt("unit_time") * Integer.parseInt(s.toString());
-                    } catch (Exception e) {
-                        Log.e("getting data:", e.getMessage());
-                        txtvalor.setText("");
-                        txttiempo.setText("");
-                    }
-                    try {
                         txtvalor.setText("$ ".concat(Float.toString(price)));
                         txttiempo.setText(time.toString().concat(" min"));
                     } catch (Exception e) {
-                        Log.e("getting data:", e.getMessage());
-                        txtvalor.setText("");
-                        txttiempo.setText("");
+                        Log.e("getting data0:", e.getMessage());
+                        txttiempo.setText("0 min");
+                        txtvalor.setText("$ 0.0");
+
                     }
                 }
             }
@@ -130,14 +126,16 @@ public class DataTraffic extends ActionBarActivity {
             parking.put("payment", payment);
 
             DefaultHttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppostreq = new HttpPost("http://10.0.2.2:3000/parkings");
+            //HttpPost httppostreq = new HttpPost("http://10.0.2.2:3000/parkings");
+            HttpPost httppostreq = new HttpPost("http://45.55.79.197/parkings");
             StringEntity se = new StringEntity(parking.toString());
             httppostreq.setHeader("Content-type", "application/json");
             httppostreq.setEntity(se);
             HttpResponse httpresponse = httpclient.execute(httppostreq);
             if (httpresponse.getStatusLine().getStatusCode() == 200) {
                 Intent intent = new Intent(this, Resume.class);
-                intent.putExtra("response", httpresponse.toString());
+                String responseString = new BasicResponseHandler().handleResponse(httpresponse);
+                intent.putExtra("response",  responseString);
                 intent.putExtra("data", parking.toString());
                 startActivity(intent);
             }
