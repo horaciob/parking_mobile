@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require "typhoeus"
 require "time"
 require 'json'
