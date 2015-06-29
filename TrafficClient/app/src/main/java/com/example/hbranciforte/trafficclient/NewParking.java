@@ -132,7 +132,7 @@ public class NewParking extends ActionBarActivity {
                 return;
             }
             if(json.has("errors")) {
-                txtResponse.setText("No se puedo encontrar información para dicha zona");
+                txtResponse.setText("No se encontró información para dicha zona");
                 nextBtn.setVisibility(View.INVISIBLE);
             }else{
                 String res = null;
