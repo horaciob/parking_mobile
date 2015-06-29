@@ -4,10 +4,12 @@ require 'time'
 require 'json'
 require 'logger'
 
-URL = 'http://localhost:3000'
-timestamp=(Time.now+3*60*60).strftime("%Y%m%d%H%M")
-parkings=JSON.parse(Typhoeus.get("#{URL}/parkings?expires=#{timestamp}&status=allowed").body)
 log = Logger.new('/tmp/logger.log',7,50000)
+URL = 'http://localhost:3000'
+puts log.info Time.now.to_i.to_s
+
+timestamp=(Time.now.utc).strftime("%Y%m%d%H%M")
+parkings=JSON.parse(Typhoeus.get("#{URL}/parkings?expires=#{timestamp}&status=allowed").body)
 
 parkings.each do |p|
   log.info "parking id: #{p['id']}   expires_at: #{p['expires_at']}"
