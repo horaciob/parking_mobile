@@ -61,7 +61,6 @@ RSpec.describe ParkingsController, type: :controller do
       get :index, license_plate: last.car.license_plate
       expect(JSON.parse(response.body).size).to eq(3)
     end
-    it 'list filtering by expired date'
   end
 
   describe '#show' do
@@ -81,7 +80,5 @@ RSpec.describe ParkingsController, type: :controller do
   end
 
   describe '#PUT' do
-    it 'extends payments'
-    it 'expires'
   end
 end

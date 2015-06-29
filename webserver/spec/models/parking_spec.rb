@@ -83,8 +83,6 @@ RSpec.describe Parking, type: :model do
       expect(Parking.status('expired').size).to eq 6
     end
 
-    it 'filter by expires_at field'
-
     it 'filter by license plate' do
       3.times { FactoryGirl.create(:parking) }
       2.times { FactoryGirl.create(:parking, :car_test) }
