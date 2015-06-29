@@ -63,8 +63,8 @@ RSpec.describe ZonesController, type: :controller do
 
   describe '#show' do
     let(:zone) { FactoryGirl.create(:zone) }
-    it 'returns zone if its called by name_number' do 
-      get :show, id:"#{zone.name}-#{zone.number}" 
+    it 'returns zone if its called by name_number' do
+      get :show, id:"#{zone.name}-#{zone.number}"
       expect(JSON.parse(response.body)["name"]).to eq(zone.name)
     end
 
@@ -80,7 +80,17 @@ RSpec.describe ZonesController, type: :controller do
     it 'should return valid zone' do
       get :show, id: zone.id
       expect(JSON.parse(response.body).keys).to include('name', 'number', 'created_at', 'updated_at',
-                                                        'unit_price', 'unit_time', 'id')
+                                                        'unit_time', 'id')
+    end
+
+    it 'respond 404 if zone didn\' exist (by name-id)' do
+      get :show, id: 'fake-900'
+      expect(response).to have_http_status 404
+    end
+
+    it 'respond 404 if zone didn\' exist (by id)' do
+      get :show, id: 100_000
+      expect(response).to have_http_status 404
     end
   end
 end

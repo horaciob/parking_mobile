@@ -24,14 +24,18 @@ class ZonesController < ApplicationController
   end
 
   def show
-    zone = nil
-    if params[:id].to_i != 0
-      zone = Zone.find(params[:id])
+    @zone = nil
+    if params['id'].to_i != 0
+      @zone = Zone.find(params['id'])
     else
-      name,number = params[:id].split("-")
-      zone = Zone.custom_find(name,number)
+      name,number = params['id'].split("-")
+      @zone = Zone.custom_find(name,number)
     end
-    render json: zone, status: 200
+    unless @zone.blank?
+      render json: @zone, status: 200
+    else
+      render json: {error:'not found'}, status: 404
+    end
   end
 
   private
