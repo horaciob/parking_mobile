@@ -202,7 +202,7 @@ public class DataTraffic extends ActionBarActivity {
 
         letterFlag = validateFormatOf( license_letter ,"[A-Za-z][A-Za-z][A-Za-z]","Debe contener 3 letras");
         numberFlag = validateFormatOf(licenseNumbers,"\\d\\d\\d","Debe contener 3 digitos");
-        coinsFlag = validateFormatOf(coins, "\\d+","Debe ingresar el número de fichas a abonar");
+        coinsFlag = validateFormatOf(coins, "^(0?[1-9]|[1-9][0-9])$","Debe ingresar el número de fichas a abonar");
         payment1Flag = validateFormatOf(payment1,"\\d+", "debe ingresar un valor de pago");
         payment2Flag = validateFormatOf(payment2,"\\d+","debe ingresar un valor de seguridad");
 
