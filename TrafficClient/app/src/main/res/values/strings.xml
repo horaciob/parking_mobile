@@ -6,4 +6,5 @@
     <string name="title_activity_new_parking">NewParking</string>
     <string name="title_activity_data_traffic">DataTraffic</string>
     <string name="title_activity_resume">Resume</string>
+    <string name="title_activity_history">History</string>
 </resources>

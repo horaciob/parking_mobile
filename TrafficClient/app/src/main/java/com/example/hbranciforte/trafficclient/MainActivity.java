@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -61,4 +62,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+    public void lunchHistory(View view) {
+        Intent intent = new Intent(this, History.class);
+        startActivity(intent);
+    }
 }
