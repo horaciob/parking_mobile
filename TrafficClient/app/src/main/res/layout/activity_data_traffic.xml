@@ -7,14 +7,16 @@
     tools:context="com.example.hbranciforte.trafficclient.DataTraffic">
     <TextView
         android:text="Datos del estacionamiento"
+        android:gravity="center"
         android:textStyle="bold"
         android:fontFamily="sans-serif-thin"
         android:textSize="25dp"
         android:textColor="#631212"
         android:textAlignment="center"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtData"
+        android:paddingBottom="25dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     />
     <EditText
@@ -41,6 +43,8 @@
     <TextView
         android:layout_below="@+id/license_letters"
         android:text="\nCantidad de fichas"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtTarifa"
@@ -49,6 +53,8 @@
         android:layout_below="@+id/txtTarifa"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
         android:hint="Fichas"
         android:id="@+id/fichas"
         android:singleLine="true"
@@ -60,6 +66,8 @@
         android:layout_toRightOf="@+id/fichas"
         android:paddingLeft="30dp"
         android:text="$ 0.0"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/valor"
@@ -69,6 +77,8 @@
         android:layout_toRightOf="@+id/fichas"
         android:paddingLeft="30dp"
         android:text="0.0 min"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtTime"
@@ -78,6 +88,8 @@
         android:paddingBottom="10px"
         android:text="\nDatos del pago"
         android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
         android:layout_height="wrap_content"
         android:id="@+id/txtPago"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -86,6 +98,8 @@
         android:text="Resumen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
         android:visibility="invisible"
         android:id="@+id/txtResumen1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -114,6 +128,8 @@
         android:layout_below="@+id/payment_field1"
         android:text=""
         android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
         android:layout_height="wrap_content"
         android:id="@+id/txtResumen"
         android:textAppearance="?android:attr/textAppearanceLarge" />

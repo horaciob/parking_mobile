@@ -11,8 +11,8 @@
         android:fontFamily="sans-serif-thin"
         android:textSize="25dp"
         android:textColor="#631212"
-        android:textAlignment="center"
-        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/wellcome"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -30,7 +30,6 @@
         android:id="@+id/btnListPark"
         android:onClick="lunchHistory"
         android:textStyle="bold"
-
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Ver Histórico"
