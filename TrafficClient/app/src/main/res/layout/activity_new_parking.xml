@@ -8,10 +8,16 @@
 
     <TextView
         android:text="Ingreso de localización"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="25dp"
+        android:textColor="#631212"
+        android:textAlignment="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtLocalizacion"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:paddingBottom="20dp"/>
     />
     <EditText
         android:layout_below="@+id/txtLocalizacion"
@@ -35,26 +41,32 @@
         />
     <Button
         android:id="@+id/searchZone"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Buscar"
+        android:textStyle="bold"
         android:layout_below="@+id/zone_name"
         android:onClick="searchZone"
         />
 
     <TextView
         android:layout_below="@+id/searchZone"
+        android:paddingTop="30dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
         android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtResult"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:paddingBottom="20dp"/>
     />
     <Button
         android:layout_below="@+id/txtResult"
+        android:textStyle="bold"
         android:id="@+id/next"
         android:visibility="invisible"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Siguiente"
         android:onClick="lunchDataSection"

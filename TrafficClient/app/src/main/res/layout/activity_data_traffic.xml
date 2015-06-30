@@ -7,6 +7,11 @@
     tools:context="com.example.hbranciforte.trafficclient.DataTraffic">
     <TextView
         android:text="Datos del estacionamiento"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="25dp"
+        android:textColor="#631212"
+        android:textAlignment="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtData"
@@ -114,8 +119,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
     <Button
         android:layout_below="@+id/txtResumen"
+        android:textStyle="bold"
         android:id="@+id/confirmData"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Confirmar"
         android:onClick="lunchResume"

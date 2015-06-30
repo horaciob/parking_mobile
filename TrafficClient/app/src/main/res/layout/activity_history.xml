@@ -13,6 +13,9 @@
         android:textSize="10sp"
         android:divider="#0b2288"
         android:dividerHeight="3px"
-        android:id="@+id/historyable" />
+        android:id="@+id/historyable"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
+        />
 
 </RelativeLayout>

@@ -36,7 +36,7 @@ public class Resume extends ActionBarActivity {
         try {
             JSONObject parseResponse = new JSONObject(extras.getString("response"));
             if(parseResponse.getString("status").equals("allowed")) {
-                value = "Tiempo de finalizacion: ".concat(parseResponse.getString("formated_expires_at").toString());
+                value = "Hora de expiración del permiso:\n".concat(parseResponse.getString("formated_expires_at").toString());
                 TextView text = (TextView) findViewById(R.id.txtResumen);
                 text.setText("Aceptado!!");
             }
