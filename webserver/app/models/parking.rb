@@ -27,7 +27,7 @@ class Parking < ActiveRecord::Base
   scope :license_plate, -> (license_plate) { joins(:car).where('license_plate = ?', license_plate) }
   scope :zone_name, -> (zone_name) { joins(:zone).where('name = ?', zone_name) }
   scope :zone_number, -> (zone_number) { joins(:zone).where('number = ?', zone_number) }
-  scope :notification_token, -> (notification_token) {joins(:device).where('notification_token=?',notification_token)}
+  scope :notification_token, -> (notification_token) {joins(:device).where('notification_token=?',notification_token).order('created_at desc')}
 
   validates :parking_units, presence: true
   validates :device, presence: true
